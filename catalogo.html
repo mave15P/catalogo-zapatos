@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo</title>
+    <meta name="description" content="Catálogo elegante de tacones y zapatillas de dama." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="sytle.css" />
+  </head>
+  <body class="catalog-body">
+    <div class="catalog-page">
+      <header class="catalog-header">
+        <div class="brand-inline">Mai Shoes</div>
+        <nav class="top-nav" aria-label="Navegación del sitio">
+          <a href="catalogo.html" class="active">Catálogo</a>
+          <a href="guia-tallas.html">Guía de tallas</a>
+        </nav>
+      </header>
+
+      <main class="catalog-layout">
+        <section class="catalog-panel">
+          <div class="toolbar">
+            <div class="search-box">
+              <label for="searchInput">Buscar por nombre</label>
+              <input id="searchInput" type="text" placeholder="Ej. Sofia, Maya, Aura..." />
+            </div>
+            <span class="badge" id="totalProductos">0 modelos</span>
+          </div>
+
+          <div id="catalogo" class="products-grid"></div>
+        </section>
+
+        <aside class="simulator-panel">
+          <div class="simulator-card">
+            <div class="simulator-header">
+              <p class="eyebrow-small">Simulación</p>
+              <div class="simulator-totals">
+                <div class="sim-total-item">
+                  <span>BCV</span>
+                  <strong id="precioBvc">$0.00</strong>
+                </div>
+                <div class="sim-total-item">
+                  <span>Divisa</span>
+                  <strong id="descuentoDivisa">$0.00</strong>
+                </div>
+              </div>
+            </div>
+
+            <div id="simulacionVacia" class="simulacion-vacia">Sin calzados en la simulación</div>
+            <div id="simulacionLista" class="simulacion-list" aria-live="polite"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="catalogo.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mai Shoes | Detalle</title>
+    <link rel="stylesheet" href="sytle.css" />
+  </head>
+  <body class="product-page-body">
+    <div class="page-shell">
+      <a href="catalogo.html" class="button primary">🢀 Volver al catálogo</a>
+      <main class="product-page">
+        <section class="gallery-panel">
+          <div class="gallery-frame">
+            <img id="mainImage" class="main-image" src="" alt="Producto" />
+          </div>
+          <div id="gallery" class="thumbnail-row"></div>
+        </section>
+
+        <section class="info-panel">
+          <h1 id="productoNombre"></h1>
+          <p id="productoDescripcion" class="product-description"></p>
+
+          <div class="price-row">
+            <span id="productoPrecio" class="price"></span>
+            <span class="stock-status">En stock</span>
+          </div>
+
+          <div class="option-block" id="selectorColor">
+            <h3>Colores disponibles</h3>
+            <div id="colores" class="swatch-row"></div>
+            <p id="colorInfo" class="selection-info"></p>
+          </div>
+
+          <div class="detail-box">
+            <h3>Detalle</h3>
+            <p id="productoDetalle"></p>
+          </div>
+
+          <div class="actions">
+            <button id="botonCompra" class="primary-button" type="button">Agregar a la simulación</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="catalogo.js"></script>
+    <script src="producto.js"></script>
+  </body>
+</html>
