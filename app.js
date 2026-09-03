@@ -29,17 +29,29 @@ const simulacionLista = document.getElementById('simulacionLista');
 const simulacionVacia = document.getElementById('simulacionVacia');
 const precioBvc = document.getElementById('precioBvc');
 const descuentoDivisa = document.getElementById('descuentoDivisa');
+const consultarPedido = document.getElementById('consultarPedido');
+const consultaPedidoError = document.getElementById('consultaPedidoError');
 
-const seleccion = new Map(
-  catalogoOrdenado
-    .filter((item) => getSavedSelection().includes(item.id))
-    .map((item) => [item.id, item])
-);
+const seleccion = new Map();
+getSavedSelection().forEach((guardado) => {
+  const id = typeof guardado === 'string' ? guardado : guardado?.id;
+  const item = catalogoOrdenado.find((producto) => producto.id === id);
+  if (item) seleccion.set(item.id, { ...item, variante: typeof guardado === 'object' ? guardado : null });
+});
 
 let modeloSeleccionadoId = getSavedSelection()[0] || catalogoOrdenado[0]?.id || null;
 
 function guardarSeleccion() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...seleccion.keys()]));
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(
+      [...seleccion.values()].map((item) =>
+        item.variante
+          ? { id: item.id, talla: item.variante.talla, color: item.variante.color, imagen: item.variante.imagen }
+          : item.id
+      )
+    )
+  );
 }
 
 function renderSimulador() {
@@ -69,9 +81,10 @@ function renderSimulador() {
     .map(
       (item) => `
         <div class="sim-item">
-          <img src="${item.imagenes[0]}" alt="${item.nombre}" />
+          <img src="${item.variante?.imagen || item.imagenes[0]}" alt="${item.nombre}" />
           <div class="sim-item-copy">
             <strong>${item.nombre}</strong>
+            ${item.variante ? `<span class="sim-item-variant">Talla ${item.variante.talla} · ${item.variante.color}</span>` : ''}
             <div class="sim-item-prices">
               <span class="sim-bcv">${formatCurrency(item.precio)}</span>
               <span class="sim-divisa">${formatCurrency(item.precioDescuento ?? item.precio)}</span>
@@ -189,6 +202,24 @@ function renderCatalogo(items = catalogoOrdenado) {
 if (searchInput) {
   searchInput.addEventListener('input', () => {
     renderCatalogo(catalogoOrdenado);
+  });
+}
+
+if (consultarPedido) {
+  consultarPedido.addEventListener('click', () => {
+    const simulacionCompleta = [...seleccion.values()].length > 0 && [...seleccion.values()].every((item) =>
+      item.variante?.color && item.variante?.talla
+    );
+
+    if (!simulacionCompleta) {
+      if (consultaPedidoError) {
+        consultaPedidoError.textContent = 'Falta especificar el color y la talla del calzado.';
+      }
+      return;
+    }
+
+    if (consultaPedidoError) consultaPedidoError.textContent = '';
+    window.location.href = 'datos-pedido.html';
   });
 }
 

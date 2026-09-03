@@ -8,6 +8,8 @@ const descripcion = document.getElementById('productoDescripcion');
 const detalle = document.getElementById('productoDetalle');
 const colores = document.getElementById('colores');
 const colorInfo = document.getElementById('colorInfo');
+const tallas = document.getElementById('tallas');
+const tallaInfo = document.getElementById('tallaInfo');
 
 if (!product) {
   document.body.innerHTML = `
@@ -18,9 +20,11 @@ if (!product) {
   `;
 } else {
   let colorActual = product.colores[0];
+  let tallaActual = null;
 
   function actualizarInfoSeleccion() {
     colorInfo.textContent = `Color seleccionado: ${colorActual.nombre}`;
+    tallaInfo.textContent = tallaActual ? `Talla seleccionada: ${tallaActual}` : 'Selecciona una talla';
   }
 
   function actualizarImagenPrincipal(src) {
@@ -77,6 +81,24 @@ if (!product) {
     });
   }
 
+  function renderTallas() {
+    tallas.innerHTML = product.tallas
+      .map((talla) => `
+        <button class="size-option ${talla === tallaActual ? 'active' : ''}" type="button" data-size="${talla}">
+          ${talla}
+        </button>
+      `)
+      .join('');
+
+    tallas.querySelectorAll('.size-option').forEach((size) => {
+      size.addEventListener('click', () => {
+        tallaActual = size.dataset.size;
+        renderTallas();
+        actualizarInfoSeleccion();
+      });
+    });
+  }
+
   nombre.textContent = product.nombre;
   const precioFinal = product.precioDescuento ?? product.precio;
   precio.innerHTML = `
@@ -95,24 +117,52 @@ if (!product) {
   actualizarImagenPrincipal(colorActual.imagen);
   renderGaleria();
   renderColores();
+  renderTallas();
   actualizarInfoSeleccion();
 
   const botonCompra = document.getElementById('botonCompra');
-  botonCompra.textContent = 'Agregar a la simulación';
+  const storageKey = 'simulacionCalzados';
+
+  function actualizarEstadoBoton() {
+    let guardados;
+    try {
+      guardados = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    } catch (error) {
+      guardados = [];
+    }
+    const seleccionado = Array.isArray(guardados) && guardados.some((item) =>
+      typeof item === 'string' ? item === product.id : item?.id === product.id
+    );
+    botonCompra.classList.toggle('selected', seleccionado);
+    botonCompra.textContent = seleccionado ? 'Agregado a la simulación' : 'Agregar a la simulación';
+  }
+
+  actualizarEstadoBoton();
 
   botonCompra.addEventListener('click', () => {
-    const storageKey = 'simulacionCalzados';
-    const guardados = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    const seleccionActual = Array.isArray(guardados) ? [...new Set(guardados)] : [];
-
-    if (!seleccionActual.includes(product.id)) {
-      seleccionActual.push(product.id);
-      localStorage.setItem(storageKey, JSON.stringify(seleccionActual));
+    if (!tallaActual) {
+      tallaInfo.textContent = 'Selecciona una talla antes de agregar a la simulación';
+      return;
     }
 
-    botonCompra.textContent = 'Agregado a la simulación';
-    setTimeout(() => {
-      botonCompra.textContent = 'Agregar a la simulación';
-    }, 1200);
+    let guardados;
+    try {
+      guardados = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    } catch (error) {
+      guardados = [];
+    }
+    const seleccionActual = Array.isArray(guardados)
+      ? guardados.filter((item) => typeof item === 'object' && item?.id !== product.id)
+      : [];
+
+    seleccionActual.push({
+      id: product.id,
+      talla: tallaActual,
+      color: colorActual.nombre,
+      imagen: colorActual.imagen
+    });
+    localStorage.setItem(storageKey, JSON.stringify(seleccionActual));
+
+    actualizarEstadoBoton();
   });
 }

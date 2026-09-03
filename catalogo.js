@@ -12,127 +12,307 @@ const catalogo = [
       { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/taconAmbarAmarillo.jpg' }
     ],
     imagenes: ['img/taconAmbar.jpg', 'img/taconAmbarRosa.jpg', 'img/taconAmbarNegro.jpg', 'img/taconAmbarAmarillo.jpg'],
-    detalle: 'Suela de alto rendimiento, amortiguación responsiva y diseño moderno para quienes buscan comodidad compatible con la actividad diaria.'
+    detalle: 'Zapatos destalonados con punta fina y un delicado lazo frontal. El equilibrio perfecto entre estilo sofisticado y comodidad para tu día a día, disponible en variada paleta de tonos.'
   },
   {
-    id: 'clarks-desert-trek',
-    nombre: 'Clarks Desert Trek',
-    categoria: 'Casual',
-    precio: 139.5,
-    precioDescuento: 119.99,
-    descripcion: 'Estilo clásico con suela resistente y gran confort.',
+    id: 'baleta-mitchel',
+    nombre: 'Baleta Mitchel',
+    precio: 33.0,
+    precioDescuento: 28.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Marrón', hex: '#8b5e3c', imagen: 'img/aura.jpg' },
-      { nombre: 'Beige', hex: '#d6c3a5', imagen: 'img/auraBeich.jpg' },
-      { nombre: 'Negro', hex: '#1f2937', imagen: 'img/auraNegro.jpg' }
+      { nombre: 'Negro', hex: '#0b0b0b', imagen: 'img/baletaMitchelNegro.jpg' },
+      { nombre: 'Blanco', hex: '#d6c3a5', imagen: 'img/baletaMitchelBlanco.jpg' }
     ],
-    imagenes: ['img/aura.jpg', 'img/auraBeich.jpg', 'img/auraNegro.jpg'],
-    detalle: 'Diseñado para acompañarte todo el día con un look casual, una mezcla perfecta de estilo, confort y durabilidad.'
+    imagenes: ['img/baletaMitchelNegro.jpg', 'img/auraBeich.jpg'],
+    detalle: 'Un diseño clásico destalonado con elegante contraste bicolor en el borde y un detalle de lazo fino. Ideal para darle un toque chic y pulcro a cualquier outfit formal o casual.'
   },
   {
-    id: 'nike-air-max',
-    nombre: 'Nike Air Max',
-    categoria: 'Urban',
-    precio: 214.0,
-    precioDescuento: 179.99,
-    descripcion: 'Energía y estilo con amortiguación visible.',
-    horma: 'Normal',
-    tallas: ['35', '36', '37', '38', '39', '40'],
-    colores: [
-      { nombre: 'Blanco', hex: '#f3f4f6', imagen: 'img/meridaBlanco.jpg' },
-      { nombre: 'Rojo', hex: '#dc2626', imagen: 'img/meridaRojo.jpg' },
-      { nombre: 'Negro', hex: '#111827', imagen: 'img/meridaNegro.jpg' }
-    ],
-    imagenes: ['img/flatsMerida.jpg', 'img/meridaBlanco.jpg', 'img/meridaRojo.jpg', 'img/meridaNegro.jpg'],
-    detalle: 'Refuerzos ligeros, visión urbana y una suela de impacto que mantiene la comodidad durante todo el día.'
-  },
-  {
-    id: 'puma-velocity',
-    nombre: 'Puma Velocity',
-    categoria: 'Deportivo',
+    id: 'tacon-aura',
+    nombre: 'Tacon Aura',
     precio: 40.0,
-    precioDescuento: 30.0,
-    descripcion: 'Ligereza y tracción para alta performance.',
+    precioDescuento: 35.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#2563eb', imagen: 'img/coquetteNegro.jpg' },
-      { nombre: 'Gris', hex: '#9ca3af', imagen: 'img/coquetteBlanco.jpg' },
-      { nombre: 'Blanco', hex: '#f8fafc', imagen: 'img/coquetteRojo.jpg' }
+      { nombre: 'Negro', hex: '#111213', imagen: 'img/auraNegro.jpg' },
+      { nombre: 'Vino', hex: '#970a0ab6', imagen: 'img/auraVino.jpg' },
+      { nombre: 'Beich', hex: '#e1b05bdd', imagen: 'img/auraBeich.jpg' },
+      { nombre: 'Blanco', hex: '#f6f6f7', imagen: 'img/auraBlanco.jpg' }
     ],
-    imagenes: ['img/coquetteBlanco.jpg', 'img/coquetteNegro.jpg', 'img/coquetteRojo.jpg'],
+    imagenes: ['img/aura.jpg', 'img/auraNegro.jpg', 'img/auraVino.jpg', 'img/auraBeich.jpg', 'img/auraBlanco.jpg'],
+    detalle: 'Elegante tacón estilizado con punta triangular y un lazo llamativo que acapara todas las miradas. Un diseño romántico y sofisticado disponible en tus tonos favoritos.'
+  },
+  {
+    id: 'baleta-nebula',
+    nombre: 'Baleta Nebula',
+    precio: 33.0,
+    precioDescuento: 28.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#0b0c0c', imagen: 'img/coquetteNegro.jpg' },
+      { nombre: 'Blanco', hex: '#eeeff1', imagen: 'img/coquetteBlanco.jpg' },
+      { nombre: 'Vino', hex: '#970a0ab6', imagen: 'img/coquetteRojo.jpg' }
+    ],
+    imagenes: ['img/taconcoquette.jpg', 'img/coquetteBlanco.jpg', 'img/coquetteNegro.jpg', 'img/coquetteRojo.jpg'],
     detalle: 'Fórmula diseñada para ofrecer estabilidad, rapidez y total libertad de movimiento en cada paso.'
   },
   {
-    id: 'skechers-go-walk',
-    nombre: 'Skechers Go Walk',
-    categoria: 'Comfort',
-    precio: 129.99,
-    precioDescuento: 99.99,
-    descripcion: 'Máxima comodidad para caminar con descanso.',
+    id: 'tacon-charol',
+    nombre: 'Tacon Charol',
+    precio: 40.0,
+    precioDescuento: 35.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
       { nombre: 'Blanco', hex: '#f3f4f6', imagen: 'img/charolBlanco.jpg' },
-      { nombre: 'Gris', hex: '#6b7280', imagen: 'img/charolChocolate.jpg' },
-      { nombre: 'Negro', hex: '#111827', imagen: 'img/charolNegro.jpg' }
+      { nombre: 'Chocolate', hex: '#6a3306', imagen: 'img/charolChocolate.jpg' },
+      { nombre: 'Negro', hex: '#111827', imagen: 'img/charolNegro.jpg' }, 
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/charolAmarillo.jpg' }
     ],
-    imagenes: ['img/charolBlanco.jpg', 'img/charolNegro.jpg', 'img/charolChocolate.jpg'],
-    detalle: 'Una de las opciones más cómodas para caminar todo el día con ligereza y apoyo continuo.'
+    imagenes: ['img/charolBlanco.jpg', 'img/charolNegro.jpg', 'img/charolChocolate.jpg', 'img/charolAmarillo.jpg'],
+    detalle: 'Tacón medio destalonado en acabado charol con un lazo estructurado en la punta. La opción perfecta para lucir elegante y ejecutiva sin perder la comodidad.'
   },
   {
-    id: 'timberland-premium',
-    nombre: 'Timberland Premium',
-    categoria: 'Outdoor',
-    precio: 239.0,
-    precioDescuento: 199.0,
-    descripcion: 'Resistencia y estilo para actividades exteriores.',
+    id: 'tacon-marrake',
+    nombre: 'Tacon Marrake',
+    precio: 39.0,
+    precioDescuento: 34.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Marrón', hex: '#7c4a2a', imagen: 'img/marrakeMarron.jpg' },
-      { nombre: 'Verde', hex: '#3f6212', imagen: 'img/marrake.jpg' },
-      { nombre: 'Negro', hex: '#1f2937', imagen: 'img/marrakeNegro.jpg' }
+      { nombre: 'Chocolate', hex: '#6a3306', imagen: 'img/marrakeMarron.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/marrakeAmarillo.jpg' },
+      { nombre: 'Negro', hex: '#1f2937', imagen: 'img/marrakeNegro.jpg' },
+      { nombre: 'Blanco', hex: '#eff2f6', imagen: 'img/marrakBlanco.jpg' }
     ],
-    imagenes: ['img/marrake.jpg', 'img/marrakeMarron.jpg', 'img/marrakeNegro.jpg'],
-    detalle: 'Materiales robustos, suela protectora y un diseño que combina resistencia con uso urbano.'
+    imagenes: ['img/marrake.jpg', 'img/marrakeMarron.jpg', 'img/marrakeNegro.jpg','img/marrakeAmarillo.jpg', 'img/marrakeBlanco.jpg'],
+    detalle: 'Sandalia de tacón ancho con tiras cruzadas y hebilla dorada. Un calzado versátil, cómodo y moderno, diseñado para destacar en cualquier ocasión con su diversidad de colores.'
   },
   {
-    id: 'vans-old-skool',
-    nombre: 'Vans Old Skool',
-    categoria: 'Street',
-    precio: 99.9,
-    precioDescuento: 79.9,
-    descripcion: 'Ícono casual con un look auténtico y atemporal.',
+    id: 'tacon-sofia',
+    nombre: 'Tacon Sofia',
+    precio: 40.0,
+    precioDescuento: 35.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
       { nombre: 'Negro', hex: '#111827', imagen: 'img/sofiaNegro.jpg' },
       { nombre: 'Blanco', hex: '#f8fafc', imagen: 'img/sofiaBlanco.jpg' },
-      { nombre: 'Vino', hex: '#7f1d1d', imagen: 'img/sofiaVino.jpg' }
+      { nombre: 'Vino', hex: '#970a0ab6', imagen: 'img/sofiaVino.jpg' },
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/sofiaRojo.jpg' },
+      { nombre: 'Rosa', hex: '#e9a0cf', imagen: 'img/sofiaRosa.jpg' },
+      { nombre: 'Oliva', hex: '#aae986', imagen: 'img/sofiaOLiva.jpg' }
     ],
-    imagenes: ['img/sofiaBlanco.jpg', 'img/sofiaNegro.jpg', 'img/sofiaVino.jpg'],
-    detalle: 'Una opción que mantiene el estilo casual y urbano sin perder comodidad ni versatilidad.'
+    imagenes: ['img/sofiaBlanco.jpg', 'img/sofiaNegro.jpg', 'img/sofiaVino.jpg','img/sofiaRojo.jpg', 'img/sofiaRosa.jpg', 'img/sofiaOliva.jpg'],
+    detalle: ''
   },
   {
-    id: 'zara-sport-flex',
-    nombre: 'Zara Sport Flex',
-    categoria: 'Fitness',
-    precio: 149.0,
-    precioDescuento: 119.0,
-    descripcion: 'Diseño funcional para movimiento, intensidad y estilo.',
+    id: 'baleta-emmy',
+    nombre: 'Baleta Emmy',
+    precio: 31.0,
+    precioDescuento: 26.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Gris', hex: '#94a3b8', imagen: 'img/baletaEmmyBlanco.jpg' },
-      { nombre: 'Blanco', hex: '#f8fafc', imagen: 'img/baletaEmmyNegro.jpg' },
-      { nombre: 'Vino', hex: '#7f1d1d', imagen: 'img/baletaEmmyVino.jpg' }
+      { nombre: 'Blanco', hex: '#94a3b8', imagen: 'img/baletaEmmyBlanco.jpg' },
+      { nombre: 'Negro', hex: '#f8fafc', imagen: 'img/baletaEmmyNegro.jpg' },
+      { nombre: 'Vino', hex: '#7f1d1d', imagen: 'img/baletaEmmyVino.jpg' },
+      { nombre: 'Rojo', hex: '#7f1d1d', imagen: 'img/baletaEmmyRojo.jpg' },
+      { nombre: 'Beich', hex: '#7f1d1d', imagen: 'img/baletaEmmyBeich.jpg' },
+      { nombre: 'Amarillo', hex: '#7f1d1d', imagen: 'img/baletaEmmyAmarillo.jpg' }
     ],
-    imagenes: ['img/baletaEmmyBlanco.jpg', 'img/baletaEmmyNegro.jpg', 'img/baletaEmmyVino.jpg'],
-    detalle: 'Combina movilidad, soporte y estética para tus rutinas más activas y una vida diaria funcional.'
-  }
+    imagenes: ['img/baletaEmmyBlanco.jpg', 'img/baletaEmmyNegro.jpg', 'img/baletaEmmyVino.jpg', 'img/baletaEmmyRojo.jpg' , 'img/baletaEmmyBeich.jpg' , 'img/baletaEmmyAmarillo.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'baleta-nebula',
+    nombre: 'Baleta Nebula',
+    precio: 33.0,
+    precioDescuento: 28.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/baletaNebulaAzul.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/baletaNebulaRosa.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/baletaNebulaAmarillo.jpg' },
+      { nombre: 'Chocolate', hex: '#6a3306', imagen: 'img/baletaNebulaMarron.jpg' }
+    ],
+    imagenes: ['img/baletaNebulaAzul.jpg', 'img/baletaNebulaRosa.jpg', 'img/baletaNebulaAmarillo.jpg', 'img/baletaNebulaMarron.jpg'],
+    detalle: 'Flats destalonados de punta fina con lazo delicado en acabado brillante. El calzado bajo perfecto para mantener la elegancia y frescura en tu rutina diaria.'
+  },
+  { 
+  id: 'tacon-coral',
+    nombre: 'Tacon Coral',
+    precio: 40.0,
+    precioDescuento: 35.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#0a0a0bde', imagen: 'img/coralNegro.jpg' },
+      { nombre: 'Blanco', hex: '#ece7eb', imagen: 'img/coralBlanco.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/coralAmarillo.jpg' },
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/coralRojo.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/coralRosa.jpg' }
+    ],
+    imagenes: ['img/taconCoral.jpg', 'img/coralNegro.jpg', 'img/coralBlanco.jpg', 'img/coralAmarillo.jpg','img/coralRojo.jpg', 'img/coralRosa.jpg'],
+    detalle: ''
+  },
+  { 
+ id: 'flats-merida',
+    nombre: 'Flats Merida',
+    precio: 30.0,
+    precioDescuento: 25.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Beich', hex: '#e1b05bdd', imagen: 'img/meridaBeig.jpg' },
+      { nombre: 'Negro', hex: '#121112', imagen: 'img/meridaNegro.jpg' },
+      { nombre: 'Blanco', hex: '#f0f1ea', imagen: 'img/meridaBlanco.jpg' },
+      { nombre: 'Vino', hex: '#640606', imagen: 'img/meridaRojo.jpg' }
+    ],
+    imagenes: ['img/flatsMerida.jpg', 'img/meridaBeich.jpg', 'img/meridaNegro.jpg', 'img/meridaBlanco.jpg', 'img/meridaRojo.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'flats-coquette',
+    nombre: 'Flats Coquette',
+    precio: 31.0,
+    precioDescuento: 26.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#0b0c0cde', imagen: 'img/flatsCoquetteNegro.jpg' },
+      { nombre: 'Blanco', hex: '#ede7ec', imagen: 'img/flatsCoquetteBlanco.jpg' },
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/flatsCoquetteRojo.jpg' },
+      { nombre: 'Chocolate', hex: '#6a3306', imagen: 'img/flatsCoquetteMarron.jpg' }
+    ],
+    imagenes: ['img/flatsCoquetteNegro.jpg', 'img/flatsCoquetteBlanco.jpg', 'img/flatsCoquetteRojo.jpg', 'img/flatsCoquetteMarron.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'baleta-dama',
+    nombre: 'Baleta Dama',
+    precio: 31.0,
+    precioDescuento: 26.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/baletaDamaNegro.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/baletaDamaBlanco.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/baletaDamaBeich.jpg' }
+    ],
+    imagenes: ['img/baletaDamaNegro.jpg', 'img/baletaDamaBlanco.jpg', 'img/baletaDamaBeich.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+  id: 'tacon-maya',
+    nombre: 'Tacon Maya',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+    ],
+    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    detalle: ''
+  },
+  
 ];
 
 window.catalogo = catalogo;

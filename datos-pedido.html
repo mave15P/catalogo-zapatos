@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaiShoes | Datos del pedido</title>
+    <link rel="stylesheet" href="sytle.css" />
+  </head>
+  <body class="product-page-body">
+    <div class="page-shell order-page-shell">
+      <a href="catalogo.html" class="button primary">🢀 Volver a la simulación</a>
+      <main class="order-form-page">
+        <section class="order-form-intro">
+          <p class="eyebrow-small">Consulta del pedido</p>
+          <h1>Completa tus datos</h1>
+          <p>Déjanos tus datos para consultar la disponibilidad del calzado seleccionado.</p>
+        </section>
+
+        <section class="order-summary" aria-labelledby="resumenPedidoTitulo">
+          <h2 id="resumenPedidoTitulo">Tu pedido</h2>
+          <div id="pedidoLista" class="order-summary-list"></div>
+          <p id="pedidoVacio" class="order-empty" hidden>La solicitud fue eliminada porque no quedan calzados seleccionados.</p>
+          <div class="order-totals">
+            <span>Total BCV <strong id="pedidoTotalBcv">$0.00</strong></span>
+            <span>Total divisa <strong id="pedidoTotalDivisa">$0.00</strong></span>
+          </div>
+        </section>
+
+        <form id="datosPedidoForm" class="order-form">
+          <label for="nombrePedido">Nombre</label>
+          <input id="nombrePedido" name="nombre" type="text" autocomplete="given-name" required />
+
+          <label for="apellidoPedido">Apellido</label>
+          <input id="apellidoPedido" name="apellido" type="text" autocomplete="family-name" required />
+
+          <label for="ciudadPedido">Ciudad</label>
+          <input id="ciudadPedido" name="ciudad" type="text" autocomplete="address-level2" required />
+
+          <label for="direccionPedido">Dirección corta</label>
+          <input id="direccionPedido" name="direccion" type="text" autocomplete="street-address" required />
+
+          <button class="primary-button" type="submit">Continuar consulta</button>
+          <p id="datosPedidoResultado" class="order-form-result" aria-live="polite"></p>
+        </form>
+      </main>
+    </div>
+
+    <script src="catalogo.js"></script>
+    <script src="pedido.js"></script>
+    <script>
+    </script>
+  </body>
+</html>
