@@ -45,10 +45,10 @@ const catalogo = [
     detalle: 'Elegante tacón estilizado con punta triangular y un lazo llamativo que acapara todas las miradas. Un diseño romántico y sofisticado disponible en tus tonos favoritos.'
   },
   {
-    id: 'baleta-nebula',
-    nombre: 'Baleta Nebula',
-    precio: 33.0,
-    precioDescuento: 28.0,
+    id: 'tacon-coquette',
+    nombre: 'Tacon Coquette',
+    precio: 39.0,
+    precioDescuento: 34.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
@@ -223,96 +223,222 @@ const catalogo = [
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
-    precio: 41.0,
-    precioDescuento: 36.0,
+  id: 'baleta-atenas',
+    nombre: 'Baleta Atenas',
+    precio: 28.0,
+    precioDescuento: 23.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/atenasNegro.jpg' },
+      { nombre: 'Vino', hex: '#e399d3', imagen: 'img/atenasVino.jpg' },
+      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/atenasAmarillo.jpg' },
+      { nombre: 'Blanco', hex: '#f3f5ec', imagen: 'img/atenasBlanco.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/baletaAtenas.jpg','img/atenasNegro.jpg', 'img/atenasVino.jpg', 'img/atenasAmarillo.jpg'],
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
+  id: 'tacon-stiletto',
+    nombre: 'Tacon Stiletto',
     precio: 41.0,
     precioDescuento: 36.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/stilettoRojo.jpg' },
+      { nombre: 'Negro', hex: '#1c1b1c', imagen: 'img/stilettoNegro.jpg' },
+      { nombre: 'Blanco', hex: '#f7f8f2', imagen: 'img/stilettoBlanco.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/stilettoBeich.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/stilettoRojo.jpg', 'img/stilettoNegro.jpg', 'img/stilettoBlanco.jpg', 'img/stilettoBeich.jpg'],
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
-    precio: 41.0,
-    precioDescuento: 36.0,
+  id: 'flats-lore',
+    nombre: 'Flats Lore',
+    precio: 30.0,
+    precioDescuento: 25.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Negro', hex: '#101011de', imagen: 'img/flatsLoreNegro.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/flatsLoreBeich.jpg' },
+      { nombre: 'Blanco', hex: '#f3f5ec', imagen: 'img/flatsLoreBlanco.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/flatsLoreNegro.jpg', 'img/flatsLoreBeich.jpg', 'img/flatsLoreBlanco.jpg'],
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
+  id: 'mocasino',
+    nombre: 'Mocasino',
     precio: 41.0,
     precioDescuento: 36.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/mocasinoNegro.jpg' },
+      { nombre: 'Beige', hex: '#e399d3', imagen: 'img/mocasinoBeige.jpg' },
+      { nombre: 'Marron', hex: '#cee089', imagen: 'img/mocasinoMarron.jpg' },
+      { nombre: 'Vino', hex: '#cee089', imagen: 'img/mocasinoVino.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/mocasinoNegro.jpg', 'img/mocasinoBeige.jpg', 'img/mocasinoMarron.jpg', 'img/mocasinoVino.jpg'],
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
+   id: 'puntilla-charol',
+    nombre: 'Puntilla Charol',
     precio: 41.0,
     precioDescuento: 36.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Vino', hex: '#77aefcde', imagen: 'img/puntillaVino.jpg' },
+      { nombre: 'Negro', hex: '#e399d3', imagen: 'img/puntillaNegro.jpg' },
+      { nombre: 'Beige', hex: '#cee089', imagen: 'img/puntillaBeige.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/puntillaCharol.jpg','img/puntillaVino.jpg', 'img/puntillaNegro.jpg', 'img/puntillaBeige.jpg'],
     detalle: ''
   },
   { 
-  id: 'tacon-maya',
-    nombre: 'Tacon Maya',
+   id: 'baleta-diana',
+    nombre: 'Baleta Diana',
+    precio: 33.0,
+    precioDescuento: 28.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Rojo', hex: '#77aefcde', imagen: 'img/dianaRojo.jpg' },
+      { nombre: 'Beige', hex: '#e399d3', imagen: 'img/dianaBeige.jpg' },
+      { nombre: 'Negro', hex: '#cee089', imagen: 'img/dianaNegro.jpg' },
+      { nombre: 'Dorado', hex: '#cee089', imagen: 'img/dianaDorado.jpg' }
+    ],
+    imagenes: ['img/dianaRojo.jpg', 'img/dianaBeige.jpg', 'img/dianaNegro.jpg', 'img/dianaDorado.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'tacon-olivia',
+    nombre: 'Tacon Olivia',
     precio: 41.0,
     precioDescuento: 36.0,
     horma: 'Normal',
     tallas: ['35', '36', '37', '38', '39', '40'],
     colores: [
-      { nombre: 'Azul', hex: '#77aefcde', imagen: 'img/mayaBeich.jpg' },
-      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/mayaNegro.jpg' },
-      { nombre: 'Amarillo', hex: '#cee089', imagen: 'img/mayaBlanco.jpg' }
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/oliviaNegro.jpg' },
+      { nombre: 'Oliva', hex: '#e399d3', imagen: 'img/oliviaOliva.jpg' },
+      { nombre: 'Crema', hex: '#cee089', imagen: 'img/oliviaCrema.jpg' }
     ],
-    imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
+    imagenes: ['img/oliviaNegro.jpg', 'img/oliviaOliva.jpg', 'img/oliviaCrema.jpg'],
     detalle: ''
   },
-  
+  { 
+  id: 'tacon-clasic',
+    nombre: 'Tacon Clasic',
+    precio: 40.0,
+    precioDescuento: 35.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/clasicNegro.jpg' },
+      { nombre: 'Blanco', hex: '#e399d3', imagen: 'img/clasicBlanco.jpg' },
+      { nombre: 'Vino', hex: '#cee089', imagen: 'img/clasicVino.jpg' }
+    ],
+    imagenes: ['img/clasicNegro.jpg', 'img/clasicBlanco.jpg', 'img/clasicVino.jpg'],
+    detalle: ''
+  },
+  { 
+    id: 'modelo-luna',
+    nombre: 'Modelo Luna',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/lunaNegro.jpg' },
+      { nombre: 'Blanco', hex: '#e399d3', imagen: 'img/lunaBlanco.jpg' },
+      { nombre: 'Marron', hex: '#cee089', imagen: 'img/lunaMarron.jpg' }
+    ],
+    imagenes: ['img/modeloLuna.jpg','img/lunaNegro.jpg', 'img/lunaBlanco.jpg', 'img/lunaMarron.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'tacon-encaje',
+    nombre: 'Tacon Encaje',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/encageNegro.jpg' },
+      { nombre: 'Blanco', hex: '#e399d3', imagen: 'img/encageBlanco.jpg' },
+      { nombre: 'Beige', hex: '#cee089', imagen: 'img/encageBeige.jpg' }
+    ],
+    imagenes: ['img/encageNegro.jpg', 'img/encageBlanco.jpg', 'img/encageBeige.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'tacon-prisma',
+    nombre: 'Tacon Prisma',
+    precio: 40.0,
+    precioDescuento: 35.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/prismaNegro.jpg' },
+      { nombre: 'Beige', hex: '#e399d3', imagen: 'img/prismaBeige.jpg' },
+      { nombre: 'Blanco', hex: '#cee089', imagen: 'img/prismaBlanco.jpg' }
+    ],
+    imagenes: ['img/prismaNegro.jpg', 'img/prismaBeige.jpg', 'img/prismaBlanco.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'tacon-philipina',
+    nombre: 'tacon Philipina',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Vino', hex: '#77aefcde', imagen: 'img/philipinaVino.jpg' },
+      { nombre: 'Beige', hex: '#e399d3', imagen: 'img/philipinaBeige.jpg' },
+      { nombre: 'Blanco', hex: '#cee089', imagen: 'img/philipinaBlanco.jpg' },
+      { nombre: 'Chocolate', hex: '#cee089', imagen: 'img/philipinaChocolate.jpg' }
+    ],
+    imagenes: ['img/philipinaVino.jpg', 'img/philipinaBeige.jpg', 'img/philipinaBlanco.jpg', 'img/philipinaChocolate.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'tacon-bordada',
+    nombre: 'Tacon Bordada',
+    precio: 42.0,
+    precioDescuento: 37.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Vino', hex: '#77aefcde', imagen: 'img/bordadaVino.jpg' },
+      { nombre: 'Dorado', hex: '#e399d3', imagen: 'img/bordadaDorado.jpg' },
+      { nombre: 'Negro', hex: '#cee089', imagen: 'img/bordadaNegro.jpg' },
+      { nombre: 'Chocolate', hex: '#cee089', imagen: 'img/bordadaMarron.jpg' },
+      { nombre: 'Rosa', hex: '#cee089', imagen: 'img/bordadaRosa.jpg' },
+    ],
+    imagenes: ['img/taconBordada.jpg','img/bordadaVino.jpg', 'img/bordadaDorado.jpg', 'img/bordadaNegro.jpg', 'img/bordadaMarron.jpg', 'img/bordadaRosa.jpg'],
+    detalle: ''
+  },
+  { 
+   id: 'baleta-maryjean',
+    nombre: 'Baleta Mary Jean',
+    precio: 30.0,
+    precioDescuento: 25.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#77aefcde', imagen: 'img/maryjeanNegro.jpg' },
+      { nombre: 'Blanco', hex: '#e399d3', imagen: 'img/maryjeanBlanco.jpg' },
+      { nombre: 'Chocolate', hex: '#cee089', imagen: 'img/maryjeanMarron.jpg' }
+    ],
+    imagenes: ['img/maryjeanNegro.jpg', 'img/maryjeanBlanco.jpg', 'img/maryjeanMarron.jpg'],
+    detalle: ''
+  }
 ];
 
 window.catalogo = catalogo;
