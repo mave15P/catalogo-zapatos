@@ -38,13 +38,10 @@ const simulacionLista = document.getElementById('simulacionLista');
 const simulacionVacia = document.getElementById('simulacionVacia');
 const precioBvc = document.getElementById('precioBvc');
 const descuentoDivisa = document.getElementById('descuentoDivisa');
-const montoReservaSimulacion = document.getElementById('montoReservaSimulacion');
+const reservaBcv = document.getElementById('reservaBcv');
+const reservaUsdt = document.getElementById('reservaUsdt');
 const consultarPedido = document.getElementById('consultarPedido');
 const consultaPedidoError = document.getElementById('consultaPedidoError');
-const mobileTotalUsdt = document.getElementById('mobileTotalUsdt');
-const mobileReservaUsdt = document.getElementById('mobileReservaUsdt');
-const mobileConsultarPedido = document.getElementById('mobileConsultarPedido');
-const mobileConsultaPedidoError = document.getElementById('mobileConsultaPedidoError');
 
 const seleccion = new Map();
 getSavedSelection().forEach((guardado) => {
@@ -76,12 +73,13 @@ function renderSimulador() {
     (sum, item) => sum + (item.precioDescuento ?? item.precio),
     0
   );
+  const reservaTotalBcv = totalBcv * 0.2;
+  const reservaTotalDivisa = totalDivisa * 0.2;
 
   if (precioBvc) precioBvc.textContent = formatCurrency(totalBcv);
   if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(totalDivisa);
-  if (montoReservaSimulacion) montoReservaSimulacion.textContent = formatUsdt(totalDivisa * 0.2);
-  if (mobileTotalUsdt) mobileTotalUsdt.textContent = formatUsdt(totalDivisa);
-  if (mobileReservaUsdt) mobileReservaUsdt.textContent = formatUsdt(totalDivisa * 0.2);
+  if (reservaBcv) reservaBcv.textContent = formatCurrency(reservaTotalBcv);
+  if (reservaUsdt) reservaUsdt.textContent = formatUsdt(reservaTotalDivisa);
 
   if (!simulacionLista || !simulacionVacia) return;
 
@@ -90,9 +88,8 @@ function renderSimulador() {
     simulacionLista.innerHTML = '';
     if (precioBvc) precioBvc.textContent = formatCurrency(0);
     if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(0);
-    if (montoReservaSimulacion) montoReservaSimulacion.textContent = formatUsdt(0);
-    if (mobileTotalUsdt) mobileTotalUsdt.textContent = formatUsdt(0);
-    if (mobileReservaUsdt) mobileReservaUsdt.textContent = formatUsdt(0);
+    if (reservaBcv) reservaBcv.textContent = formatCurrency(0);
+    if (reservaUsdt) reservaUsdt.textContent = formatUsdt(0);
     return;
   }
 
@@ -225,7 +222,8 @@ if (searchInput) {
   });
 }
 
-function consultarPedidoHandler() {
+if (consultarPedido) {
+  consultarPedido.addEventListener('click', () => {
     const simulacionCompleta = [...seleccion.values()].length > 0 && [...seleccion.values()].every((item) =>
       item.variante?.color && item.variante?.talla
     );
@@ -234,23 +232,12 @@ function consultarPedidoHandler() {
       if (consultaPedidoError) {
         consultaPedidoError.textContent = 'Falta especificar el color y la talla del calzado.';
       }
-      if (mobileConsultaPedidoError) {
-        mobileConsultaPedidoError.textContent = 'Completa color y talla.';
-      }
       return;
     }
 
     if (consultaPedidoError) consultaPedidoError.textContent = '';
-    if (mobileConsultaPedidoError) mobileConsultaPedidoError.textContent = '';
     window.location.href = 'datos-pedido.html';
-}
-
-if (consultarPedido) {
-  consultarPedido.addEventListener('click', consultarPedidoHandler);
-}
-
-if (mobileConsultarPedido) {
-  mobileConsultarPedido.addEventListener('click', consultarPedidoHandler);
+  });
 }
 
 renderCatalogo();

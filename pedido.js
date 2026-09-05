@@ -3,7 +3,8 @@ const pedidoLista = document.getElementById('pedidoLista');
 const pedidoVacio = document.getElementById('pedidoVacio');
 const pedidoTotalBcv = document.getElementById('pedidoTotalBcv');
 const pedidoTotalDivisa = document.getElementById('pedidoTotalDivisa');
-const pedidoReserva = document.getElementById('pedidoReserva');
+const pedidoReservaBcv = document.getElementById('pedidoReservaBcv');
+const pedidoReservaUsdt = document.getElementById('pedidoReservaUsdt');
 const datosPedidoForm = document.getElementById('datosPedidoForm');
 const datosPedidoResultado = document.getElementById('datosPedidoResultado');
 
@@ -49,7 +50,8 @@ function renderPedido() {
     datosPedidoForm.hidden = true;
     pedidoTotalBcv.textContent = formatCurrency(0);
     pedidoTotalDivisa.textContent = formatUsdt(0);
-    pedidoReserva.textContent = formatUsdt(0);
+    pedidoReservaBcv.textContent = formatCurrency(0);
+    pedidoReservaUsdt.textContent = formatUsdt(0);
     return;
   }
 
@@ -85,7 +87,8 @@ function renderPedido() {
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
   pedidoTotalBcv.textContent = formatCurrency(totalBcv);
   pedidoTotalDivisa.textContent = formatUsdt(totalDivisa);
-  pedidoReserva.textContent = formatUsdt(totalDivisa * 0.2);
+  pedidoReservaBcv.textContent = formatCurrency(totalBcv * 0.2);
+  pedidoReservaUsdt.textContent = formatUsdt(totalDivisa * 0.2);
 }
 
 pedidoLista.addEventListener('change', (event) => {
@@ -127,6 +130,8 @@ datosPedidoForm.addEventListener('submit', (event) => {
   const datos = new FormData(datosPedidoForm);
   const totalBcv = pedido.reduce((total, item) => total + item.producto.precio, 0);
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
+  const reservaBcv = totalBcv * 0.2;
+  const reservaUsdt = totalDivisa * 0.2;
   const detalles = pedido
     .map(({ seleccion, producto }) => [
       `Calzado: ${producto.nombre}`,
@@ -145,7 +150,9 @@ datosPedidoForm.addEventListener('submit', (event) => {
     detalles,
     '',
     `Total BCV: ${formatCurrency(totalBcv)}`,
-    `Total USDT: ${formatUsdt(totalDivisa)}`
+    `20% de reserva BCV: ${formatCurrency(reservaBcv)}`,
+    `Total USDT: ${formatUsdt(totalDivisa)}`,
+    `20% de reserva USDT: ${formatUsdt(reservaUsdt)}`
   ].join('\n');
 
   const whatsappUrl = `https://wa.me/584128672906?text=${encodeURIComponent(mensaje)}`;

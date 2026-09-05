@@ -16,7 +16,7 @@
       <header class="catalog-header">
         <div class="brand-inline">Mai Shoes</div>
         <nav class="top-nav" aria-label="Navegación del sitio">
-          <a href="principal.html" >Inicio</a>
+          <a href="index.html" >Inicio</a>
           <a href="guia-tallas.html">Guía de tallas</a>
         </nav>
       </header>
@@ -42,14 +42,12 @@
                 <div class="sim-total-item">
                   <span>BCV</span>
                   <strong id="precioBvc">$0.00</strong>
+                  <small>20%: <b id="reservaBcv">$0.00</b></small>
                 </div>
                 <div class="sim-total-item">
                   <span>USDT</span>
                   <strong id="descuentoDivisa">$0.00</strong>
-                </div>
-                <div class="sim-total-item">
-                  <span>20% para reservar</span>
-                  <strong id="montoReservaSimulacion">0,00 USDT</strong>
+                  <small>20%: <b id="reservaUsdt">0,00 USDT</b></small>
                 </div>
               </div>
             </div>
@@ -64,17 +62,6 @@
           </div>
         </aside>
       </main>
-
-      <div class="mobile-order-bar" aria-label="Resumen del pedido">
-        <div class="mobile-order-amounts">
-          <span>Total USDT <strong id="mobileTotalUsdt">0,00 USDT</strong></span>
-          <span>20% para reservar <strong id="mobileReservaUsdt">0,00 USDT</strong></span>
-        </div>
-        <div class="mobile-order-action">
-          <button id="mobileConsultarPedido" class="consult-order-button" type="button">Consultar pedido</button>
-          <p id="mobileConsultaPedidoError" class="mobile-order-error" aria-live="polite"></p>
-        </div>
-      </div>
     </div>
 
     <script src="catalogo.js"></script>

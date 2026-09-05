@@ -12,7 +12,7 @@ const catalogo = [
       { nombre: 'Amarillo', hex: '#dff781', imagen: 'img/taconAmbarAmarillo.jpg' }
     ],
     imagenes: ['img/taconAmbar.jpg', 'img/taconAmbarRosa.jpg', 'img/taconAmbarNegro.jpg', 'img/taconAmbarAmarillo.jpg'],
-    detalle: 'Zapatos destalonados con punta fina y un delicado lazo frontal. El equilibrio perfecto entre estilo sofisticado y comodidad para tu día a día, disponible en variada paleta de tonos.'
+    detalle: 'Zapatos destalonados con punta fina, con un tacón de un aproximado de 3-4 cm y un delicado lazo frontal. El equilibrio perfecto entre estilo sofisticado y comodidad para tu día a día, disponible en variada paleta de tonos.'
   },
   {
     id: 'baleta-mitchel',
@@ -42,7 +42,7 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#f6f6f7', imagen: 'img/auraBlanco.jpg' }
     ],
     imagenes: ['img/aura.jpg', 'img/auraNegro.jpg', 'img/auraVino.jpg', 'img/auraBeich.jpg', 'img/auraBlanco.jpg'],
-    detalle: 'Elegante tacón estilizado con punta triangular y un lazo llamativo que acapara todas las miradas. Un diseño romántico y sofisticado disponible en tus tonos favoritos.'
+    detalle: 'Elegante tacón estilizado con punta triangular, un tacón de un aproximado de 7-8 cm y un lazo llamativo que acapara todas las miradas. Un diseño romántico y sofisticado disponible en tus tonos favoritos.'
   },
   {
     id: 'tacon-coquette',
@@ -57,7 +57,7 @@ const catalogo = [
       { nombre: 'Vino', hex: '#590303ce', imagen: 'img/coquetteRojo.jpg' }
     ],
     imagenes: ['img/taconcoquette.jpg', 'img/coquetteBlanco.jpg', 'img/coquetteNegro.jpg', 'img/coquetteRojo.jpg'],
-    detalle: 'Fórmula diseñada para ofrecer estabilidad, rapidez y total libertad de movimiento en cada paso.'
+    detalle: 'Fórmula diseñada para ofrecer estabilidad, rapidez y total libertad de movimiento en cada paso, con un tacón de un aproximado de 3-4 cm.'
   },
   {
     id: 'tacon-charol',
@@ -89,7 +89,7 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#eff2f6', imagen: 'img/marrakBlanco.jpg' }
     ],
     imagenes: ['img/marrake.jpg', 'img/marrakeMarron.jpg', 'img/marrakeNegro.jpg','img/marrakeAmarillo.jpg', 'img/marrakeBlanco.jpg'],
-    detalle: 'Sandalia de tacón ancho con tiras cruzadas y hebilla dorada. Un calzado versátil, cómodo y moderno, diseñado para destacar en cualquier ocasión con su diversidad de colores.'
+    detalle: 'Sandalia de tacón ancho con aproximado de 6-7 cm, tiras cruzadas y hebilla dorada. Un calzado versátil, cómodo y moderno, diseñado para destacar en cualquier ocasión con su diversidad de colores.'
   },
   {
     id: 'tacon-sofia',
@@ -107,7 +107,7 @@ const catalogo = [
       { nombre: 'Oliva', hex: '#7ea766d1', imagen: 'img/sofiaOliva.jpg' }
     ],
     imagenes: ['img/sofiaBlanco.jpg', 'img/sofiaNegro.jpg', 'img/sofiaVino.jpg','img/sofiaRojo.jpg', 'img/sofiaRosa.jpg', 'img/sofiaOliva.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón slingback refinado y discreto. En charol con punta afilada, cuenta con un pequeño y delicado lazo de charol como detalle final, con el tacón bloque medio y cuadrado, estable con aproximadamente 4-5 cm.'
   },
   {
     id: 'baleta-emmy',
@@ -125,10 +125,10 @@ const catalogo = [
       { nombre: 'Amarillo', hex: '#dff781', imagen: 'img/baletaEmmyAmarillo.jpg' }
     ],
     imagenes: ['img/baletaEmmyBlanco.jpg', 'img/baletaEmmyNegro.jpg', 'img/baletaEmmyVino.jpg', 'img/baletaEmmyRojo.jpg' , 'img/baletaEmmyBeich.jpg' , 'img/baletaEmmyAmarillo.jpg'],
-    detalle: ''
+    detalle: 'Baleta slingback de charol con punta fina y hebilla/adorno rectangular al tono en la parte delantera y plano.'
   },
   { 
-  id: 'baleta-nebula',
+    id: 'baleta-nebula',
     nombre: 'Baleta Nebula',
     precio: 33.0,
     precioDescuento: 28.0,
@@ -141,10 +141,10 @@ const catalogo = [
       { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/baletaNebulaMarron.jpg' }
     ],
     imagenes: ['img/baletaNebulaAzul.jpg', 'img/baletaNebulaRosa.jpg', 'img/baletaNebulaAmarillo.jpg', 'img/baletaNebulaMarron.jpg'],
-    detalle: 'Flats destalonados de punta fina con lazo delicado en acabado brillante. El calzado bajo perfecto para mantener la elegancia y frescura en tu rutina diaria.'
+    detalle: 'Baleta destalonados de punta fina con lazo delicado en acabado brillante. El calzado bajo perfecto para mantener la elegancia y frescura en tu rutina diaria.'
   },
   { 
-  id: 'tacon-coral',
+    id: 'tacon-coral',
     nombre: 'Tacón Coral',
     precio: 40.0,
     precioDescuento: 35.0,
@@ -161,7 +161,7 @@ const catalogo = [
     detalle: ''
   },
   { 
- id: 'flats-merida',
+    id: 'flats-merida',
     nombre: 'Flats Merida',
     precio: 30.0,
     precioDescuento: 25.0,
@@ -174,10 +174,10 @@ const catalogo = [
       { nombre: 'Vino', hex: '#590303ce', imagen: 'img/meridaRojo.jpg' }
     ],
     imagenes: ['img/flatsMerida.jpg', 'img/meridaBeich.jpg', 'img/meridaNegro.jpg', 'img/meridaBlanco.jpg', 'img/meridaRojo.jpg'],
-    detalle: ''
+    detalle: 'Flat slingback de punta afilada con corte en "V" y detalle de lazo plano sobre el empeine, plano con correa posterior al talón.'
   },
   { 
-  id: 'flats-coquette',
+    id: 'flats-coquette',
     nombre: 'Flats Coquette',
     precio: 31.0,
     precioDescuento: 26.0,
@@ -190,10 +190,10 @@ const catalogo = [
       { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/flatsCoquetteMarron.jpg' }
     ],
     imagenes: ['img/flatsCoquetteNegro.jpg', 'img/flatsCoquetteBlanco.jpg', 'img/flatsCoquetteRojo.jpg', 'img/flatsCoquetteMarron.jpg'],
-    detalle: ''
+    detalle: 'Flat slingback en charol brillante de punta afilada con un pequeño y coqueto lazo en el empeine, plano con talón descubierto.'
   },
   { 
-  id: 'baleta-dama',
+    id: 'baleta-dama',
     nombre: 'Baleta Dama',
     precio: 31.0,
     precioDescuento: 26.0,
@@ -205,10 +205,10 @@ const catalogo = [
       { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/baletaDamaBeich.jpg' }
     ],
     imagenes: ['img/baletaDamaNegro.jpg', 'img/baletaDamaBlanco.jpg', 'img/baletaDamaBeich.jpg'],
-    detalle: ''
+    detalle: 'Baleta destalonado de estilo romántico. Confeccionado en malla con encaje floral y lazo delicado en la punta.'
   },
   { 
-  id: 'tacon-maya',
+    id: 'tacon-maya',
     nombre: 'Tacón Maya',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -236,7 +236,7 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#f0f1ea', imagen: 'img/atenasBlanco.jpg' }
     ],
     imagenes: ['img/baletaAtenas.jpg','img/atenasNegro.jpg', 'img/atenasVino.jpg', 'img/atenasAmarillo.jpg'],
-    detalle: ''
+    detalle: 'Baletina clásica de punta afilada con delicado lazo fino en el empeine y detalles metálicos en las puntas del lazo, totalmente plana.'
   },
   { 
   id: 'tacon-stiletto',
@@ -252,7 +252,7 @@ const catalogo = [
       { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/stilettoBeich.jpg' }
     ],
     imagenes: ['img/stilettoRojo.jpg', 'img/stilettoNegro.jpg', 'img/stilettoBlanco.jpg', 'img/stilettoBeich.jpg'],
-    detalle: ''
+    detalle: 'El clásico y sexy zapato de salón. De punta afilada y confeccionado en charol, su diseño limpio y minimalista es pura elegancia, con un tacon fino, de aguja de aproximadamente 10 cm o más.'
   },
   { 
   id: 'flats-lore',
@@ -267,7 +267,7 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#f3f5ec', imagen: 'img/flatsLoreBlanco.jpg' }
     ],
     imagenes: ['img/flatsLoreNegro.jpg', 'img/flatsLoreBeich.jpg', 'img/flatsLoreBlanco.jpg'],
-    detalle: ''
+    detalle: 'Zapato plano destalonado de punta afilada en charol, destacado por un adorno geométrico/cuadrado en el empeine, sulea plana.'
   },
   { 
   id: 'mocasino',
@@ -283,10 +283,10 @@ const catalogo = [
       { nombre: 'Vino', hex: '#590303ce', imagen: 'img/mocasinoVino.jpg' }
     ],
     imagenes: ['img/mocasinoNegro.jpg', 'img/mocasinoBeige.jpg', 'img/mocasinoMarron.jpg', 'img/mocasinoVino.jpg'],
-    detalle: ''
+    detalle: 'Mocasín clásico y robusto de acabado brillante/charol con herraje metálico decorativo sobre el empeine y suela gruesa e dentada tipo track.'
   },
   { 
-   id: 'puntilla-charol',
+    id: 'puntilla-charol',
     nombre: 'Puntilla Charol',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -298,10 +298,10 @@ const catalogo = [
       { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/puntillaBeige.jpg' }
     ],
     imagenes: ['img/puntillaCharol.jpg','img/puntillaVino.jpg', 'img/puntillaNegro.jpg', 'img/puntillaBeige.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón moderno y atrevido. En charol con punta muy afilada, destaca por su talón abierto y doble correa al tobillo decorada con una fina cadena dorada, con un tacón alto y fino, tipo stiletto con aproximadamente 8-9 cm.'
   },
   { 
-   id: 'baleta-diana',
+    id: 'baleta-diana',
     nombre: 'Baleta Diana',
     precio: 33.0,
     precioDescuento: 28.0,
@@ -314,10 +314,10 @@ const catalogo = [
       { nombre: 'Dorado', hex: '#a38c06', imagen: 'img/dianaDorado.jpg' }
     ],
     imagenes: ['img/dianaRojo.jpg', 'img/dianaBeige.jpg', 'img/dianaNegro.jpg', 'img/dianaDorado.jpg'],
-    detalle: ''
+    detalle: 'Baleta destalonado de punta semi-cuadrada. Acabado en charol brillante con adorno metálico dorado en la punta.'
   },
   { 
-  id: 'tacon-olivia',
+    id: 'tacon-olivia',
     nombre: 'Tacón Olivia',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -329,10 +329,10 @@ const catalogo = [
       { nombre: 'Crema', hex: '#ebe8d5', imagen: 'img/oliviaCrema.jpg' }
     ],
     imagenes: ['img/oliviaNegro.jpg', 'img/oliviaOliva.jpg', 'img/oliviaCrema.jpg'],
-    Descripción: 'Sandalia de tacón moderna y sofisticada. De punta cuadrada y acabado en charol brillante, se distingue por un lazo de charol sobre el empeine y una fina correa al tobillo, tacón bloque alto y cuadrado, muy robusto con un aproximado de 8-9 cm.'
+    detalle: 'Sandalia de tacón moderna y sofisticada. De punta cuadrada y acabado en charol brillante, se distingue por un lazo de charol sobre el empeine y una fina correa al tobillo, tacón bloque alto y cuadrado, muy robusto con un aproximado de 8-9 cm.'
   },
   { 
-  id: 'tacon-clasic',
+    id: 'tacon-clasic',
     nombre: 'Tacón Clasic',
     precio: 40.0,
     precioDescuento: 35.0,
@@ -359,10 +359,10 @@ const catalogo = [
       { nombre: 'Marron', hex: '#aa620b', imagen: 'img/lunaMarron.jpg' }
     ],
     imagenes: ['img/modeloLuna.jpg','img/lunaNegro.jpg', 'img/lunaBlanco.jpg', 'img/lunaMarron.jpg'],
-    detalle: ''
+    detalle: 'Sandalia destalonada de estilo casual/urbano. Cuenta con capellada ancha y hebilla metálica grande sobre una base ergonómica, plataforma baja.'
   },
   { 
-  id: 'tacon-encaje',
+    id: 'tacon-encaje',
     nombre: 'Tacón Encaje',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -377,7 +377,7 @@ const catalogo = [
     detalle: 'Mule refinado y romántico. Con cuerpo de delicado encaje floral sobre malla, presenta punta puntiaguda con un lazo de tela a juego, tacón alto y fino, tipo stiletto con aproximadamente de 8-9 cm.'
   },
   { 
-  id: 'tacon-prisma',
+    id: 'tacon-prisma',
     nombre: 'Tacón Prisma',
     precio: 40.0,
     precioDescuento: 35.0,
@@ -392,7 +392,7 @@ const catalogo = [
     detalle: 'Mule romántico y femenino. Confeccionado en delicado encaje floral sobre malla transparente, presenta una punta puntiaguda con un lazo de tela a juego, tacón alto y fino, tipo stiletto con un aproximado de 8-9 cm.'
   },
   { 
-  id: 'tacon-philipina',
+    id: 'tacon-philipina',
     nombre: 'Tacón Philipina',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -405,10 +405,10 @@ const catalogo = [
       { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/philipinaChocolate.jpg' }
     ],
     imagenes: ['img/philipinaVino.jpg', 'img/philipinaBeige.jpg', 'img/philipinaBlanco.jpg', 'img/philipinaChocolate.jpg'],
-    detalle: 'Zapato de salón slingback clásico y coqueto. Acabado en charol brillante, con punta redonda adornada por un delicado lazo de charol y detalles dorados, tacón medio y cuadrado, muy estable con un aproximado de 4-5 cm.'
+    detalle: 'Zapato de salón slingback clásico y coqueto. Acabado en charol brillante, con punta redonda adornada por un delicado lazo de charol y detalles dorados, tacón medio y cuadrado con un aproximado de 4-5 cm, muy estable.'
   },
   { 
-  id: 'tacon-bordada',
+    id: 'tacon-bordada',
     nombre: 'Tacón Bordada',
     precio: 42.0,
     precioDescuento: 37.0,
@@ -422,10 +422,10 @@ const catalogo = [
       { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/bordadaRosa.jpg' },
     ],
     imagenes: ['img/taconBordada.jpg','img/bordadaVino.jpg', 'img/bordadaDorada.jpg', 'img/bordadaNegra.jpg', 'img/bordadaMarron.jpg', 'img/bordadaRosa.jpg'],
-    detalle: 'Elegante zapato de tacón slingback con punta afilada. Destaca por su base de tela crema texturizada con sofisticados bordados florales y correas de charol a juego, tacón medio-alto, estilo carrete con un aproximado de 6-7 cm.'
+    detalle: 'Elegante zapato de tacón slingback con punta afilada. Destaca por su base de tela crema texturizada con sofisticados bordados florales y correas de charol a juego, tacón medio-alto con un aproximado de 6-7 cm.'
   },
   { 
-  id: 'baleta-maryjean',
+    id: 'baleta-maryjean',
     nombre: 'Baleta Mary Jean',
     precio: 30.0,
     precioDescuento: 25.0,

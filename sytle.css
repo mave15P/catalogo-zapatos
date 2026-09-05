@@ -1192,6 +1192,17 @@ h1 {
   font-size: 1rem;
 }
 
+.sim-total-item small,
+.order-totals small {
+  color: #6a4d54;
+  font-size: 0.7rem;
+}
+
+.sim-total-item small b,
+.order-totals small b {
+  color: #b42318;
+}
+
 .simulacion-vacia {
   display: block;
   padding: 18px 14px;
@@ -1234,10 +1245,6 @@ h1 {
   color: #b42318;
   font-size: 0.76rem;
   line-height: 1.4;
-}
-
-.mobile-order-bar {
-  display: none;
 }
 
 .sim-item {
@@ -1668,65 +1675,6 @@ h1 {
 }
 
 @media (max-width: 640px) {
-  .catalog-page {
-    padding-bottom: 112px;
-  }
-
-  .mobile-order-bar {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(255, 250, 246, 0.96);
-    border-top: 1px solid rgba(59, 31, 36, 0.14);
-    box-shadow: 0 -8px 24px rgba(59, 31, 36, 0.12);
-    backdrop-filter: blur(10px);
-  }
-
-  .mobile-order-amounts {
-    display: grid;
-    gap: 3px;
-    min-width: 0;
-  }
-
-  .mobile-order-amounts span {
-    display: grid;
-    gap: 1px;
-    color: #6a4d54;
-    font-size: 0.67rem;
-    line-height: 1.15;
-  }
-
-  .mobile-order-amounts strong {
-    color: #3b1f24;
-    font-size: 0.84rem;
-  }
-
-  .mobile-order-bar .consult-order-button {
-    flex: 0 0 auto;
-    padding: 10px 11px;
-    font-size: 0.72rem;
-  }
-
-  .mobile-order-action {
-    display: grid;
-    justify-items: end;
-    gap: 3px;
-  }
-
-  .mobile-order-error {
-    min-height: 0.9em;
-    margin: 0;
-    color: #b42318;
-    font-size: 0.63rem;
-  }
-
   .toolbar {
     flex-direction: column;
     align-items: stretch;
