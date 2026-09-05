@@ -22,6 +22,15 @@ const formatCurrency = (value) =>
     maximumFractionDigits: 2
   }).format(value);
 
+const formatUsdt = (value) =>
+  `${new Intl.NumberFormat('es-VE', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(value)} USDT`;
+
+const normalizeSearchText = (value) =>
+  value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
 const contenedor = document.getElementById('catalogo');
 const total = document.getElementById('totalProductos');
 const searchInput = document.getElementById('searchInput');
@@ -64,7 +73,7 @@ function renderSimulador() {
   );
 
   if (precioBvc) precioBvc.textContent = formatCurrency(totalBcv);
-  if (descuentoDivisa) descuentoDivisa.textContent = formatCurrency(totalDivisa);
+  if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(totalDivisa);
 
   if (!simulacionLista || !simulacionVacia) return;
 
@@ -72,7 +81,7 @@ function renderSimulador() {
     simulacionVacia.style.display = 'block';
     simulacionLista.innerHTML = '';
     if (precioBvc) precioBvc.textContent = formatCurrency(0);
-    if (descuentoDivisa) descuentoDivisa.textContent = formatCurrency(0);
+    if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(0);
     return;
   }
 
@@ -87,7 +96,7 @@ function renderSimulador() {
             ${item.variante ? `<span class="sim-item-variant">Talla ${item.variante.talla} · ${item.variante.color}</span>` : ''}
             <div class="sim-item-prices">
               <span class="sim-bcv">${formatCurrency(item.precio)}</span>
-              <span class="sim-divisa">${formatCurrency(item.precioDescuento ?? item.precio)}</span>
+              <span class="sim-divisa">${formatUsdt(item.precioDescuento ?? item.precio)}</span>
             </div>
           </div>
           <button type="button" class="sim-remove" data-id="${item.id}" aria-label="Quitar ${item.nombre}">Quitar</button>
@@ -109,9 +118,9 @@ function renderSimulador() {
 function renderCatalogo(items = catalogoOrdenado) {
   if (!contenedor || !total) return;
 
-  const query = searchInput?.value.trim().toLowerCase() || '';
+  const query = normalizeSearchText(searchInput?.value.trim() || '');
   const productosFiltrados = query
-    ? items.filter((item) => item.nombre.toLowerCase().includes(query))
+    ? items.filter((item) => normalizeSearchText(item.nombre).includes(query))
     : items;
 
   total.textContent = `${productosFiltrados.length} artículos`;
@@ -143,7 +152,7 @@ function renderCatalogo(items = catalogoOrdenado) {
             <div class="meta">
               <div class="price-stack">
                 <span class="price-old">${formatCurrency(item.precio)}</span>
-                <span class="price-discount">${formatCurrency(precioFinal)}</span>
+                <span class="price-discount">${formatUsdt(precioFinal)}</span>
               </div>
             </div>
 

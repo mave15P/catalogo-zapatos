@@ -14,6 +14,12 @@ const formatCurrency = (value) =>
     maximumFractionDigits: 2
   }).format(value);
 
+const formatUsdt = (value) =>
+  `${new Intl.NumberFormat('es-VE', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(value)} USDT`;
+
 function leerPedido() {
   try {
     const guardados = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -41,7 +47,7 @@ function renderPedido() {
     pedidoVacio.hidden = false;
     datosPedidoForm.hidden = true;
     pedidoTotalBcv.textContent = formatCurrency(0);
-    pedidoTotalDivisa.textContent = formatCurrency(0);
+    pedidoTotalDivisa.textContent = formatUsdt(0);
     return;
   }
 
@@ -66,7 +72,6 @@ function renderPedido() {
                 ${producto.tallas.map((talla) => `<option value="${talla}" ${talla === tallaActual ? 'selected' : ''}>${talla}</option>`).join('')}
               </select>
             </label>
-            <strong class="order-item-price">${formatCurrency(producto.precioDescuento ?? producto.precio)}</strong>
           </div>
           <button class="order-delete" type="button" data-id="${producto.id}">Eliminar</button>
         </article>
@@ -77,7 +82,7 @@ function renderPedido() {
   const totalBcv = pedido.reduce((total, item) => total + item.producto.precio, 0);
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
   pedidoTotalBcv.textContent = formatCurrency(totalBcv);
-  pedidoTotalDivisa.textContent = formatCurrency(totalDivisa);
+  pedidoTotalDivisa.textContent = formatUsdt(totalDivisa);
 }
 
 pedidoLista.addEventListener('change', (event) => {
@@ -137,7 +142,7 @@ datosPedidoForm.addEventListener('submit', (event) => {
     detalles,
     '',
     `Total BCV: ${formatCurrency(totalBcv)}`,
-    `Total divisa: ${formatCurrency(totalDivisa)}`
+    `Total USDT: ${formatUsdt(totalDivisa)}`
   ].join('\n');
 
   const whatsappUrl = `https://wa.me/584128672906?text=${encodeURIComponent(mensaje)}`;

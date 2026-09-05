@@ -107,8 +107,8 @@ if (!product) {
       <strong>$${product.precio.toFixed(2)}</strong>
     </span>
     <span class="price-item price-divisa">
-      <small>Precio en divisa</small>
-      <strong>$${precioFinal.toFixed(2)}</strong>
+      <small>Precio USDT</small>
+      <strong>${precioFinal.toFixed(2)} USDT</strong>
     </span>
   `;
   descripcion.textContent = product.descripcion;
