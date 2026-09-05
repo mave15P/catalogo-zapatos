@@ -317,7 +317,7 @@ const catalogo = [
     detalle: ''
   },
   { 
-   id: 'tacon-olivia',
+  id: 'tacon-olivia',
     nombre: 'Tacón Olivia',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -329,7 +329,7 @@ const catalogo = [
       { nombre: 'Crema', hex: '#ebe8d5', imagen: 'img/oliviaCrema.jpg' }
     ],
     imagenes: ['img/oliviaNegro.jpg', 'img/oliviaOliva.jpg', 'img/oliviaCrema.jpg'],
-    detalle: ''
+    Descripción: 'Sandalia de tacón moderna y sofisticada. De punta cuadrada y acabado en charol brillante, se distingue por un lazo de charol sobre el empeine y una fina correa al tobillo, tacón bloque alto y cuadrado, muy robusto con un aproximado de 8-9 cm.'
   },
   { 
   id: 'tacon-clasic',
@@ -344,7 +344,7 @@ const catalogo = [
       { nombre: 'Vino', hex: '#590303ce', imagen: 'img/clasicVino.jpg' }
     ],
     imagenes: ['img/clasicNegro.jpg', 'img/clasicBlanco.jpg', 'img/clasicVino.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón atemporal. De charol brillante y punta afilada, cuenta con una fina correa al tobillo para un look sofisticado y versátil, tacón bloque medio-alto y cuadrado, estable con aproximadamente 6-7 cm.'
   },
   { 
     id: 'modelo-luna',
@@ -362,7 +362,7 @@ const catalogo = [
     detalle: ''
   },
   { 
-   id: 'tacon-encaje',
+  id: 'tacon-encaje',
     nombre: 'Tacón Encaje',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -374,10 +374,10 @@ const catalogo = [
       { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/encageBeige.jpg' }
     ],
     imagenes: ['img/encageNegro.jpg', 'img/encageBlanco.jpg', 'img/encageBeige.jpg'],
-    detalle: ''
+    detalle: 'Mule refinado y romántico. Con cuerpo de delicado encaje floral sobre malla, presenta punta puntiaguda con un lazo de tela a juego, tacón alto y fino, tipo stiletto con aproximadamente de 8-9 cm.'
   },
   { 
-   id: 'tacon-prisma',
+  id: 'tacon-prisma',
     nombre: 'Tacón Prisma',
     precio: 40.0,
     precioDescuento: 35.0,
@@ -389,10 +389,10 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#fefffb', imagen: 'img/prismaBlanco.jpg' }
     ],
     imagenes: ['img/prismaNegro.jpg', 'img/prismaBeige.jpg', 'img/prismaBlanco.jpg'],
-    detalle: ''
+    detalle: 'Mule romántico y femenino. Confeccionado en delicado encaje floral sobre malla transparente, presenta una punta puntiaguda con un lazo de tela a juego, tacón alto y fino, tipo stiletto con un aproximado de 8-9 cm.'
   },
   { 
-   id: 'tacon-philipina',
+  id: 'tacon-philipina',
     nombre: 'Tacón Philipina',
     precio: 41.0,
     precioDescuento: 36.0,
@@ -405,10 +405,10 @@ const catalogo = [
       { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/philipinaChocolate.jpg' }
     ],
     imagenes: ['img/philipinaVino.jpg', 'img/philipinaBeige.jpg', 'img/philipinaBlanco.jpg', 'img/philipinaChocolate.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón slingback clásico y coqueto. Acabado en charol brillante, con punta redonda adornada por un delicado lazo de charol y detalles dorados, tacón medio y cuadrado, muy estable con un aproximado de 4-5 cm.'
   },
   { 
-   id: 'tacon-bordada',
+  id: 'tacon-bordada',
     nombre: 'Tacón Bordada',
     precio: 42.0,
     precioDescuento: 37.0,
@@ -422,10 +422,10 @@ const catalogo = [
       { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/bordadaRosa.jpg' },
     ],
     imagenes: ['img/taconBordada.jpg','img/bordadaVino.jpg', 'img/bordadaDorada.jpg', 'img/bordadaNegra.jpg', 'img/bordadaMarron.jpg', 'img/bordadaRosa.jpg'],
-    detalle: ''
+    detalle: 'Elegante zapato de tacón slingback con punta afilada. Destaca por su base de tela crema texturizada con sofisticados bordados florales y correas de charol a juego, tacón medio-alto, estilo carrete con un aproximado de 6-7 cm.'
   },
   { 
-   id: 'baleta-maryjean',
+  id: 'baleta-maryjean',
     nombre: 'Baleta Mary Jean',
     precio: 30.0,
     precioDescuento: 25.0,
@@ -437,7 +437,7 @@ const catalogo = [
       { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/maryjeanMarron.jpg' }
     ],
     imagenes: ['img/maryjeanNegro.jpg', 'img/maryjeanBlanco.jpg', 'img/maryjeanMarron.jpg'],
-    detalle: ''
+    detalle: 'Flat cerrado de horma redonda y corte coquette. Confeccionado en acabado mate con detalle de lazo brillante en el empeine.Plano, súper cómodo para uso diario.'
   }
 ];
 

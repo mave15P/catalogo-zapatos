@@ -3,6 +3,7 @@ const pedidoLista = document.getElementById('pedidoLista');
 const pedidoVacio = document.getElementById('pedidoVacio');
 const pedidoTotalBcv = document.getElementById('pedidoTotalBcv');
 const pedidoTotalDivisa = document.getElementById('pedidoTotalDivisa');
+const pedidoReserva = document.getElementById('pedidoReserva');
 const datosPedidoForm = document.getElementById('datosPedidoForm');
 const datosPedidoResultado = document.getElementById('datosPedidoResultado');
 
@@ -48,6 +49,7 @@ function renderPedido() {
     datosPedidoForm.hidden = true;
     pedidoTotalBcv.textContent = formatCurrency(0);
     pedidoTotalDivisa.textContent = formatUsdt(0);
+    pedidoReserva.textContent = formatUsdt(0);
     return;
   }
 
@@ -83,6 +85,7 @@ function renderPedido() {
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
   pedidoTotalBcv.textContent = formatCurrency(totalBcv);
   pedidoTotalDivisa.textContent = formatUsdt(totalDivisa);
+  pedidoReserva.textContent = formatUsdt(totalDivisa * 0.2);
 }
 
 pedidoLista.addEventListener('change', (event) => {

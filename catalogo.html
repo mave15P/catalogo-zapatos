@@ -47,6 +47,10 @@
                   <span>USDT</span>
                   <strong id="descuentoDivisa">$0.00</strong>
                 </div>
+                <div class="sim-total-item">
+                  <span>20% para reservar</span>
+                  <strong id="montoReservaSimulacion">0,00 USDT</strong>
+                </div>
               </div>
             </div>
 
@@ -60,6 +64,17 @@
           </div>
         </aside>
       </main>
+
+      <div class="mobile-order-bar" aria-label="Resumen del pedido">
+        <div class="mobile-order-amounts">
+          <span>Total USDT <strong id="mobileTotalUsdt">0,00 USDT</strong></span>
+          <span>20% para reservar <strong id="mobileReservaUsdt">0,00 USDT</strong></span>
+        </div>
+        <div class="mobile-order-action">
+          <button id="mobileConsultarPedido" class="consult-order-button" type="button">Consultar pedido</button>
+          <p id="mobileConsultaPedidoError" class="mobile-order-error" aria-live="polite"></p>
+        </div>
+      </div>
     </div>
 
     <script src="catalogo.js"></script>
