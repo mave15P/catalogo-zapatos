@@ -25,7 +25,7 @@ const formatUsdt = (value) =>
 
 function leerPedido() {
   try {
-    const guardados = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const guardados = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
     return Array.isArray(guardados) ? guardados : [];
   } catch (error) {
     return [];
@@ -33,7 +33,7 @@ function leerPedido() {
 }
 
 function guardarPedido(pedido) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(pedido));
+  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(pedido));
 }
 
 function obtenerProducto(id) {

@@ -127,7 +127,7 @@ if (!product) {
   function actualizarEstadoBoton() {
     let guardados;
     try {
-      guardados = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      guardados = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
     } catch (error) {
       guardados = [];
     }
@@ -148,7 +148,7 @@ if (!product) {
 
     let guardados;
     try {
-      guardados = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      guardados = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
     } catch (error) {
       guardados = [];
     }
@@ -162,8 +162,8 @@ if (!product) {
       color: colorActual.nombre,
       imagen: colorActual.imagen
     });
-    localStorage.setItem(storageKey, JSON.stringify(seleccionActual));
-    localStorage.setItem(newSelectionKey, 'true');
+    sessionStorage.setItem(storageKey, JSON.stringify(seleccionActual));
+    sessionStorage.setItem(newSelectionKey, 'true');
 
     actualizarEstadoBoton();
   });

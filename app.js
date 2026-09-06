@@ -7,7 +7,7 @@ const catalogoOrdenado = [...window.catalogo].sort((a, b) =>
 
 const getSavedSelection = () => {
   try {
-    const guardados = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const guardados = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]');
     const idsUnicos = Array.isArray(guardados) ? guardados : [];
     return [...new Set(idsUnicos)];
   } catch (error) {
@@ -46,7 +46,7 @@ const simulatorToggle = document.getElementById('simulatorToggle');
 const consultarPedido = document.getElementById('consultarPedido');
 const consultaPedidoError = document.getElementById('consultaPedidoError');
 
-if (simulatorCard && localStorage.getItem(NEW_SELECTION_KEY) === 'true') {
+if (simulatorCard && sessionStorage.getItem(NEW_SELECTION_KEY) === 'true') {
   simulatorCard.classList.add('has-new-selection');
 }
 
@@ -63,7 +63,7 @@ getSavedSelection().forEach((guardado) => {
 let modeloSeleccionadoId = getSavedSelection()[0] || catalogoOrdenado[0]?.id || null;
 
 function guardarSeleccion() {
-  localStorage.setItem(
+  sessionStorage.setItem(
     STORAGE_KEY,
     JSON.stringify(
       [...seleccion.values()].map((item) =>
@@ -149,7 +149,7 @@ if (simulatorToggle && simulatorCard) {
     simulatorToggle.setAttribute('aria-expanded', String(abierta));
     if (abierta) {
       simulatorCard.classList.remove('has-new-selection');
-      localStorage.removeItem(NEW_SELECTION_KEY);
+      sessionStorage.removeItem(NEW_SELECTION_KEY);
     }
   });
 }
@@ -233,7 +233,7 @@ function renderCatalogo(items = catalogoOrdenado) {
       renderSimulador();
       if (seleccion.has(producto.id)) {
         simulatorCard?.classList.add('has-new-selection');
-        localStorage.setItem(NEW_SELECTION_KEY, 'true');
+        sessionStorage.setItem(NEW_SELECTION_KEY, 'true');
       }
     });
   });
