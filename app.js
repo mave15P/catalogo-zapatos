@@ -43,8 +43,8 @@ const monedaSimulacion = document.getElementById('monedaSimulacion');
 const monedaTotalLabel = document.getElementById('monedaTotalLabel');
 const simulatorCard = document.getElementById('simulatorCard');
 const simulatorToggle = document.getElementById('simulatorToggle');
-const consultarPedido = document.getElementById('consultarPedido');
-const consultaPedidoError = document.getElementById('consultaPedidoError');
+const comprarPedido = document.getElementById('consultarPedido');
+const compraPedidoError = document.getElementById('consultaPedidoError');
 
 if (simulatorCard && sessionStorage.getItem(NEW_SELECTION_KEY) === 'true') {
   simulatorCard.classList.add('has-new-selection');
@@ -65,6 +65,19 @@ let modeloSeleccionadoId = getSavedSelection()[0] || catalogoOrdenado[0]?.id || 
 function guardarSeleccion() {
   sessionStorage.setItem(
     STORAGE_KEY,
+    JSON.stringify(
+      [...seleccion.values()].map((item) =>
+        item.variante
+          ? { id: item.id, talla: item.variante.talla, color: item.variante.color, imagen: item.variante.imagen }
+          : item.id
+      )
+    )
+  );
+}
+
+function guardarSimulacionAntesDeAbrirProducto() {
+  localStorage.setItem(
+    'simulacionAntesProducto',
     JSON.stringify(
       [...seleccion.values()].map((item) =>
         item.variante
@@ -110,7 +123,9 @@ function renderSimulador() {
     .map(
       (item) => `
         <div class="sim-item">
-          <img src="${item.variante?.imagen || item.imagenes[0]}" alt="${item.nombre}" loading="lazy" />
+          <a class="sim-item-image-link" href="producto.html?id=${item.id}&return=simulacion" aria-label="Elegir talla y color de ${item.nombre}">
+            <img src="${item.variante?.imagen || item.imagenes[0]}" alt="Elegir talla y color de ${item.nombre}" loading="lazy" />
+          </a>
           <div class="sim-item-copy">
             <strong>${item.nombre}</strong>
             ${item.variante ? `<span class="sim-item-variant">Talla ${item.variante.talla} · ${item.variante.color}</span>` : ''}
@@ -132,6 +147,10 @@ function renderSimulador() {
       renderCatalogo();
       renderSimulador();
     });
+  });
+
+  simulacionLista.querySelectorAll('.sim-item-image-link').forEach((link) => {
+    link.addEventListener('click', guardarSimulacionAntesDeAbrirProducto);
   });
 }
 
@@ -206,7 +225,6 @@ function renderCatalogo(items = catalogoOrdenado) {
             </div>
 
             <div class="card-actions">
-              <a class="detail-link" href="producto.html?id=${item.id}">Ver perfil</a>
               <button class="select-button ${seleccionado ? 'selected' : ''}" type="button" data-id="${item.id}">
                 ${seleccionado ? 'Seleccionado' : 'Seleccionar'}
               </button>
@@ -240,13 +258,15 @@ function renderCatalogo(items = catalogoOrdenado) {
 
   contenedor.querySelectorAll('.select-card').forEach((card) => {
     card.addEventListener('click', (event) => {
-      if (event.target.closest('.select-button') || event.target.closest('.detail-link')) {
+      if (event.target.closest('.select-button')) {
         return;
       }
       const id = card.querySelector('.select-button')?.dataset.id;
       if (!id) return;
       modeloSeleccionadoId = id;
-      renderCatalogo();
+      const vieneDeSimulacion = seleccion.has(id);
+      if (vieneDeSimulacion) guardarSimulacionAntesDeAbrirProducto();
+      window.location.href = `producto.html?id=${id}${vieneDeSimulacion ? '&return=simulacion' : ''}`;
     });
   });
 }
@@ -257,22 +277,32 @@ if (searchInput) {
   });
 }
 
-if (consultarPedido) {
-  consultarPedido.addEventListener('click', () => {
-    const simulacionCompleta = [...seleccion.values()].length > 0 && [...seleccion.values()].every((item) =>
-      item.variante?.color && item.variante?.talla
+if (comprarPedido) {
+  comprarPedido.addEventListener('click', () => {
+    const productosSeleccionados = [...seleccion.values()];
+    const productosIncompletos = productosSeleccionados.filter((item) =>
+      !item.variante?.color || !item.variante?.talla
     );
+    const simulacionCompleta = productosSeleccionados.length > 0 && productosIncompletos.length === 0;
 
     if (!simulacionCompleta) {
-      if (consultaPedidoError) {
-        consultaPedidoError.textContent = 'Falta especificar el color y la talla del calzado.';
+      if (compraPedidoError) {
+        compraPedidoError.textContent = productosIncompletos.length
+          ? `Completa talla y color de: ${productosIncompletos.map((item) => item.nombre).join(', ')}.`
+          : 'Agrega al menos un calzado a la simulación.';
       }
       return;
     }
 
-    if (consultaPedidoError) consultaPedidoError.textContent = '';
+    if (compraPedidoError) compraPedidoError.textContent = '';
     window.location.href = 'datos-pedido.html';
   });
+}
+
+if (window.location.hash === '#simulacion' && simulatorCard) {
+  simulatorCard.classList.add('is-open');
+  simulatorToggle?.setAttribute('aria-expanded', 'true');
+  window.requestAnimationFrame(() => simulatorCard.scrollIntoView({ behavior: 'smooth', block: 'center' }));
 }
 
 renderCatalogo();

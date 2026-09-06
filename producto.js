@@ -10,6 +10,7 @@ const colores = document.getElementById('colores');
 const colorInfo = document.getElementById('colorInfo');
 const tallas = document.getElementById('tallas');
 const tallaInfo = document.getElementById('tallaInfo');
+const volverProducto = document.getElementById('volverProducto');
 
 if (!product) {
   document.body.innerHTML = `
@@ -19,8 +20,34 @@ if (!product) {
     </div>
   `;
 } else {
-  let colorActual = product.colores[0];
-  let tallaActual = null;
+  const storageKey = 'simulacionCalzados';
+  const backupKey = 'simulacionAntesProducto';
+  const vieneDeSimulacion = new URLSearchParams(window.location.search).get('return') === 'simulacion';
+  let guardados = [];
+  try {
+    guardados = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+  } catch (error) {
+    guardados = [];
+  }
+  if (vieneDeSimulacion) {
+    try {
+      const simulacionRespaldada = JSON.parse(localStorage.getItem(backupKey) || '[]');
+      if (Array.isArray(simulacionRespaldada) && simulacionRespaldada.length) {
+        guardados = simulacionRespaldada;
+      }
+    } catch (error) {
+    }
+  }
+  const varianteGuardada = Array.isArray(guardados)
+    ? guardados.find((item) => typeof item === 'object' && item?.id === product.id)
+    : null;
+  let colorActual = product.colores.find((color) => color.nombre === varianteGuardada?.color) || product.colores[0];
+  let tallaActual = product.tallas.includes(varianteGuardada?.talla) ? varianteGuardada.talla : null;
+
+  if (new URLSearchParams(window.location.search).get('return') === 'simulacion' && volverProducto) {
+    volverProducto.href = 'catalogo.html#simulacion';
+    volverProducto.innerHTML = '<span class="back-arrow" aria-hidden="true">←</span> Volver a la simulación';
+  }
 
   function actualizarInfoSeleccion() {
     colorInfo.textContent = `Color seleccionado: ${colorActual.nombre}`;
@@ -121,7 +148,6 @@ if (!product) {
   actualizarInfoSeleccion();
 
   const botonCompra = document.getElementById('botonCompra');
-  const storageKey = 'simulacionCalzados';
   const newSelectionKey = 'simulacionNuevaSeleccion';
 
   function actualizarEstadoBoton() {
@@ -153,7 +179,7 @@ if (!product) {
       guardados = [];
     }
     const seleccionActual = Array.isArray(guardados)
-      ? guardados.filter((item) => typeof item === 'object' && item?.id !== product.id)
+      ? guardados.filter((item) => (typeof item === 'string' ? item : item?.id) !== product.id)
       : [];
 
     seleccionActual.push({
@@ -163,8 +189,13 @@ if (!product) {
       imagen: colorActual.imagen
     });
     sessionStorage.setItem(storageKey, JSON.stringify(seleccionActual));
+    localStorage.removeItem(backupKey);
     sessionStorage.setItem(newSelectionKey, 'true');
 
     actualizarEstadoBoton();
+
+    if (vieneDeSimulacion) {
+      window.location.href = 'catalogo.html#simulacion';
+    }
   });
 }

@@ -1292,6 +1292,20 @@ h1 {
   background: linear-gradient(135deg, #f9f3ee, #edd7cd);
 }
 
+.sim-item-image-link {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 10px;
+  outline: 2px solid transparent;
+  transition: outline-color 0.2s ease, transform 0.2s ease;
+}
+
+.sim-item-image-link:hover,
+.sim-item-image-link:focus-visible {
+  outline-color: #2563eb;
+  transform: scale(1.04);
+}
+
 .sim-item-copy {
   display: grid;
   gap: 4px;
