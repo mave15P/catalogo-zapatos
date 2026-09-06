@@ -158,7 +158,7 @@ const catalogo = [
       { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/coralRosa.jpg' }
     ],
     imagenes: ['img/taconCoral.jpg', 'img/coralNegro.jpg', 'img/coralBlanco.jpg', 'img/coralAmarillo.jpg','img/coralRojo.jpg', 'img/coralRosa.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón destalonado con punta afilada y acabado en charol brillante. Destaca por un vistoso lazo de charol sobre el empeine y una fina correa ajustable al tobillo, tacón bloque medio-alto y ancho, muy cómodo y estable con aproximado de 6-7 cm.'
   },
   { 
     id: 'flats-merida',
@@ -220,7 +220,7 @@ const catalogo = [
       { nombre: 'Blanco', hex: '#f9f9f6', imagen: 'img/mayaBlanco.jpg' }
     ],
     imagenes: ['img/mayaBeich.jpg', 'img/mayaNegro.jpg', 'img/mayaBlanco.jpg'],
-    detalle: ''
+    detalle: 'Zapato de salón romántico y elegante. Confeccionado en delicado encaje floral sobre malla transparente, con punta afilada, adorno de lazo fino en el empeine y correa ajustada al tobillo, tacón bloque medio-alto y grueso, brinda gran estabilidad al caminar, con un aproximado de 6-7 cm.'
   },
   { 
   id: 'baleta-atenas',

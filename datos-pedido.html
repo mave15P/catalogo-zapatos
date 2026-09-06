@@ -23,12 +23,22 @@
           <div id="pedidoLista" class="order-summary-list"></div>
           <p id="pedidoVacio" class="order-empty" hidden>La solicitud fue eliminada porque no quedan calzados seleccionados.</p>
           <div class="order-totals">
-            <span>Total BCV <strong id="pedidoTotalBcv">$0.00</strong><small>20%: <b id="pedidoReservaBcv">$0.00</b></small></span>
-            <span>Total USDT <strong id="pedidoTotalDivisa">0,00 USDT</strong><small>20%: <b id="pedidoReservaUsdt">0,00 USDT</b></small></span>
+            <span id="pedidoMonedaSinSeleccionar">Selecciona una moneda para ver el total</span>
+            <span id="pedidoTotalSeleccionado" hidden>Total <strong id="pedidoTotal">$0.00</strong><small>20% de reserva: <b id="pedidoReserva">$0.00</b></small></span>
           </div>
         </section>
 
         <form id="datosPedidoForm" class="order-form">
+          <div class="payment-currency-choice">
+            <label for="monedaPago">¿Con qué moneda pagarás todo el pedido?</label>
+            <select id="monedaPago" name="monedaPago" required>
+              <option value="" selected disabled>Selecciona BCV o USDT</option>
+              <option value="bcv">BCV</option>
+              <option value="usdt">USDT</option>
+            </select>
+            <p>La moneda que elijas será la moneda de pago para todos los calzados de este pedido.</p>
+          </div>
+
           <label for="nombrePedido">Nombre</label>
           <input id="nombrePedido" name="nombre" type="text" autocomplete="given-name" required />
 

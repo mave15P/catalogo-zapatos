@@ -122,6 +122,7 @@ if (!product) {
 
   const botonCompra = document.getElementById('botonCompra');
   const storageKey = 'simulacionCalzados';
+  const newSelectionKey = 'simulacionNuevaSeleccion';
 
   function actualizarEstadoBoton() {
     let guardados;
@@ -162,6 +163,7 @@ if (!product) {
       imagen: colorActual.imagen
     });
     localStorage.setItem(storageKey, JSON.stringify(seleccionActual));
+    localStorage.setItem(newSelectionKey, 'true');
 
     actualizarEstadoBoton();
   });

@@ -35,29 +35,36 @@
         </section>
 
         <aside class="simulator-panel">
-          <div class="simulator-card">
-            <div class="simulator-header">
+          <div class="simulator-card" id="simulatorCard">
+            <button id="simulatorToggle" class="mobile-simulator-toggle" type="button" aria-expanded="false" aria-controls="simulatorDetails">
+              Simulación
+            </button>
+            <div id="simulatorDetails" class="simulator-details">
+              <div class="simulator-header">
               <p class="eyebrow-small">Simulación</p>
+              <label class="currency-selector" for="monedaSimulacion">
+                Ver precios en
+                <select id="monedaSimulacion">
+                  <option value="bcv">BCV</option>
+                  <option value="usdt">USDT</option>
+                </select>
+              </label>
               <div class="simulator-totals">
                 <div class="sim-total-item">
-                  <span>BCV</span>
+                  <span id="monedaTotalLabel">Total BCV</span>
                   <strong id="precioBvc">$0.00</strong>
                   <small>20%: <b id="reservaBcv">$0.00</b></small>
                 </div>
-                <div class="sim-total-item">
-                  <span>USDT</span>
-                  <strong id="descuentoDivisa">$0.00</strong>
-                  <small>20%: <b id="reservaUsdt">0,00 USDT</b></small>
-                </div>
               </div>
-            </div>
+              </div>
 
-            <div id="simulacionVacia" class="simulacion-vacia">Sin calzados en la simulación</div>
-            <div id="simulacionLista" class="simulacion-list" aria-live="polite"></div>
+              <div id="simulacionVacia" class="simulacion-vacia">Sin calzados en la simulación</div>
+              <div id="simulacionLista" class="simulacion-list" aria-live="polite"></div>
 
-            <div class="order-query">
-              <button id="consultarPedido" class="consult-order-button" type="button">Consultar pedido</button>
-              <p id="consultaPedidoError" class="order-query-error" aria-live="polite"></p>
+              <div class="order-query">
+                <button id="consultarPedido" class="consult-order-button" type="button">Consultar pedido</button>
+                <p id="consultaPedidoError" class="order-query-error" aria-live="polite"></p>
+              </div>
             </div>
           </div>
         </aside>

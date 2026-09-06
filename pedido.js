@@ -1,12 +1,13 @@
 const STORAGE_KEY = 'simulacionCalzados';
 const pedidoLista = document.getElementById('pedidoLista');
 const pedidoVacio = document.getElementById('pedidoVacio');
-const pedidoTotalBcv = document.getElementById('pedidoTotalBcv');
-const pedidoTotalDivisa = document.getElementById('pedidoTotalDivisa');
-const pedidoReservaBcv = document.getElementById('pedidoReservaBcv');
-const pedidoReservaUsdt = document.getElementById('pedidoReservaUsdt');
+const pedidoMonedaSinSeleccionar = document.getElementById('pedidoMonedaSinSeleccionar');
+const pedidoTotalSeleccionado = document.getElementById('pedidoTotalSeleccionado');
+const pedidoTotal = document.getElementById('pedidoTotal');
+const pedidoReserva = document.getElementById('pedidoReserva');
 const datosPedidoForm = document.getElementById('datosPedidoForm');
 const datosPedidoResultado = document.getElementById('datosPedidoResultado');
+const monedaPago = document.getElementById('monedaPago');
 
 const formatCurrency = (value) =>
   new Intl.NumberFormat('es-VE', {
@@ -39,6 +40,20 @@ function obtenerProducto(id) {
   return window.catalogo.find((item) => item.id === id);
 }
 
+function actualizarTotales(totalBcv, totalDivisa) {
+  const mostrarBcv = monedaPago.value === 'bcv';
+  const mostrarUsdt = monedaPago.value === 'usdt';
+  const total = mostrarBcv ? totalBcv : totalDivisa;
+  const formato = mostrarBcv ? formatCurrency : formatUsdt;
+
+  pedidoMonedaSinSeleccionar.hidden = mostrarBcv || mostrarUsdt;
+  pedidoTotalSeleccionado.hidden = !mostrarBcv && !mostrarUsdt;
+  if (mostrarBcv || mostrarUsdt) {
+    pedidoTotal.textContent = formato(total);
+    pedidoReserva.textContent = formato(total * 0.2);
+  }
+}
+
 function renderPedido() {
   const pedido = leerPedido()
     .map((seleccion) => ({ seleccion, producto: obtenerProducto(seleccion.id) }))
@@ -48,10 +63,8 @@ function renderPedido() {
     pedidoLista.innerHTML = '';
     pedidoVacio.hidden = false;
     datosPedidoForm.hidden = true;
-    pedidoTotalBcv.textContent = formatCurrency(0);
-    pedidoTotalDivisa.textContent = formatUsdt(0);
-    pedidoReservaBcv.textContent = formatCurrency(0);
-    pedidoReservaUsdt.textContent = formatUsdt(0);
+    pedidoMonedaSinSeleccionar.hidden = false;
+    pedidoTotalSeleccionado.hidden = true;
     return;
   }
 
@@ -85,10 +98,7 @@ function renderPedido() {
 
   const totalBcv = pedido.reduce((total, item) => total + item.producto.precio, 0);
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
-  pedidoTotalBcv.textContent = formatCurrency(totalBcv);
-  pedidoTotalDivisa.textContent = formatUsdt(totalDivisa);
-  pedidoReservaBcv.textContent = formatCurrency(totalBcv * 0.2);
-  pedidoReservaUsdt.textContent = formatUsdt(totalDivisa * 0.2);
+  actualizarTotales(totalBcv, totalDivisa);
 }
 
 pedidoLista.addEventListener('change', (event) => {
@@ -122,6 +132,13 @@ pedidoLista.addEventListener('click', (event) => {
 datosPedidoForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
+  if (!monedaPago.value) {
+    monedaPago.setCustomValidity('Selecciona la moneda con la que pagarás todo el pedido.');
+    monedaPago.reportValidity();
+    return;
+  }
+  monedaPago.setCustomValidity('');
+
   const pedido = leerPedido()
     .map((seleccion) => ({ seleccion, producto: obtenerProducto(seleccion.id) }))
     .filter((item) => item.producto && typeof item.seleccion === 'object');
@@ -132,6 +149,11 @@ datosPedidoForm.addEventListener('submit', (event) => {
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
   const reservaBcv = totalBcv * 0.2;
   const reservaUsdt = totalDivisa * 0.2;
+  const mostrarBcv = monedaPago.value === 'bcv';
+  const totalSeleccionado = mostrarBcv ? totalBcv : totalDivisa;
+  const reservaSeleccionada = mostrarBcv ? reservaBcv : reservaUsdt;
+  const formatoSeleccionado = mostrarBcv ? formatCurrency : formatUsdt;
+  const monedaSeleccionada = mostrarBcv ? 'BCV' : 'USDT';
   const detalles = pedido
     .map(({ seleccion, producto }) => [
       `Calzado: ${producto.nombre}`,
@@ -149,15 +171,19 @@ datosPedidoForm.addEventListener('submit', (event) => {
     '',
     detalles,
     '',
-    `Total BCV: ${formatCurrency(totalBcv)}`,
-    `20% de reserva BCV: ${formatCurrency(reservaBcv)}`,
-    `Total USDT: ${formatUsdt(totalDivisa)}`,
-    `20% de reserva USDT: ${formatUsdt(reservaUsdt)}`
+    `Moneda de pago para todo el pedido: ${monedaSeleccionada}`,
+    `Total a pagar: ${formatoSeleccionado(totalSeleccionado)}`,
+    `20% de reserva: ${formatoSeleccionado(reservaSeleccionada)}`
   ].join('\n');
 
   const whatsappUrl = `https://wa.me/584128672906?text=${encodeURIComponent(mensaje)}`;
   datosPedidoResultado.textContent = 'Abriendo WhatsApp con el detalle de tu pedido...';
   window.location.href = whatsappUrl;
+});
+
+monedaPago.addEventListener('change', () => {
+  monedaPago.setCustomValidity('');
+  renderPedido();
 });
 
 renderPedido();

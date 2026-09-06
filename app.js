@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'simulacionCalzados';
+const NEW_SELECTION_KEY = 'simulacionNuevaSeleccion';
 
 const catalogoOrdenado = [...window.catalogo].sort((a, b) =>
   a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
@@ -37,11 +38,20 @@ const searchInput = document.getElementById('searchInput');
 const simulacionLista = document.getElementById('simulacionLista');
 const simulacionVacia = document.getElementById('simulacionVacia');
 const precioBvc = document.getElementById('precioBvc');
-const descuentoDivisa = document.getElementById('descuentoDivisa');
 const reservaBcv = document.getElementById('reservaBcv');
-const reservaUsdt = document.getElementById('reservaUsdt');
+const monedaSimulacion = document.getElementById('monedaSimulacion');
+const monedaTotalLabel = document.getElementById('monedaTotalLabel');
+const simulatorCard = document.getElementById('simulatorCard');
+const simulatorToggle = document.getElementById('simulatorToggle');
 const consultarPedido = document.getElementById('consultarPedido');
 const consultaPedidoError = document.getElementById('consultaPedidoError');
+
+if (simulatorCard && localStorage.getItem(NEW_SELECTION_KEY) === 'true') {
+  simulatorCard.classList.add('has-new-selection');
+}
+
+let monedaSeleccionada = localStorage.getItem('monedaSimulacion') || 'bcv';
+if (monedaSimulacion) monedaSimulacion.value = monedaSeleccionada;
 
 const seleccion = new Map();
 getSavedSelection().forEach((guardado) => {
@@ -76,20 +86,22 @@ function renderSimulador() {
   const reservaTotalBcv = totalBcv * 0.2;
   const reservaTotalDivisa = totalDivisa * 0.2;
 
-  if (precioBvc) precioBvc.textContent = formatCurrency(totalBcv);
-  if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(totalDivisa);
-  if (reservaBcv) reservaBcv.textContent = formatCurrency(reservaTotalBcv);
-  if (reservaUsdt) reservaUsdt.textContent = formatUsdt(reservaTotalDivisa);
+  const mostrarBcv = monedaSeleccionada === 'bcv';
+  const formatoPrecio = mostrarBcv ? formatCurrency : formatUsdt;
+  const totalMostrado = mostrarBcv ? totalBcv : totalDivisa;
+  const reservaMostrada = mostrarBcv ? reservaTotalBcv : reservaTotalDivisa;
+  if (monedaTotalLabel) monedaTotalLabel.textContent = `Total ${mostrarBcv ? 'BCV' : 'USDT'}`;
+  if (precioBvc) precioBvc.textContent = formatoPrecio(totalMostrado);
+  if (reservaBcv) reservaBcv.textContent = formatoPrecio(reservaMostrada);
 
   if (!simulacionLista || !simulacionVacia) return;
 
   if (!itemsSeleccionados.length) {
     simulacionVacia.style.display = 'block';
     simulacionLista.innerHTML = '';
-    if (precioBvc) precioBvc.textContent = formatCurrency(0);
-    if (descuentoDivisa) descuentoDivisa.textContent = formatUsdt(0);
-    if (reservaBcv) reservaBcv.textContent = formatCurrency(0);
-    if (reservaUsdt) reservaUsdt.textContent = formatUsdt(0);
+    const formatoVacio = monedaSeleccionada === 'bcv' ? formatCurrency : formatUsdt;
+    if (precioBvc) precioBvc.textContent = formatoVacio(0);
+    if (reservaBcv) reservaBcv.textContent = formatoVacio(0);
     return;
   }
 
@@ -120,6 +132,25 @@ function renderSimulador() {
       renderCatalogo();
       renderSimulador();
     });
+  });
+}
+
+if (monedaSimulacion) {
+  monedaSimulacion.addEventListener('change', () => {
+    monedaSeleccionada = monedaSimulacion.value;
+    localStorage.setItem('monedaSimulacion', monedaSeleccionada);
+    renderSimulador();
+  });
+}
+
+if (simulatorToggle && simulatorCard) {
+  simulatorToggle.addEventListener('click', () => {
+    const abierta = simulatorCard.classList.toggle('is-open');
+    simulatorToggle.setAttribute('aria-expanded', String(abierta));
+    if (abierta) {
+      simulatorCard.classList.remove('has-new-selection');
+      localStorage.removeItem(NEW_SELECTION_KEY);
+    }
   });
 }
 
@@ -200,6 +231,10 @@ function renderCatalogo(items = catalogoOrdenado) {
       guardarSeleccion();
       renderCatalogo();
       renderSimulador();
+      if (seleccion.has(producto.id)) {
+        simulatorCard?.classList.add('has-new-selection');
+        localStorage.setItem(NEW_SELECTION_KEY, 'true');
+      }
     });
   });
 
