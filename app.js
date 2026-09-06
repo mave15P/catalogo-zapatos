@@ -110,7 +110,7 @@ function renderSimulador() {
     .map(
       (item) => `
         <div class="sim-item">
-          <img src="${item.variante?.imagen || item.imagenes[0]}" alt="${item.nombre}" />
+          <img src="${item.variante?.imagen || item.imagenes[0]}" alt="${item.nombre}" loading="lazy" />
           <div class="sim-item-copy">
             <strong>${item.nombre}</strong>
             ${item.variante ? `<span class="sim-item-variant">Talla ${item.variante.talla} · ${item.variante.color}</span>` : ''}
@@ -182,7 +182,7 @@ function renderCatalogo(items = catalogoOrdenado) {
 
       return `
         <article class="select-card ${item.id === modeloSeleccionadoId ? 'active' : ''}">
-          <img src="${item.imagenes[0]}" alt="${item.nombre}" />
+          <img src="${item.imagenes[0]}" alt="${item.nombre}" loading="lazy" />
           <div class="content">
             <div class="card-header-row">
               <h2 class="name">${item.nombre}</h2>

@@ -37,7 +37,7 @@ if (!product) {
       .map(
         (imagen, index) => `
           <button class="thumb ${index === 0 ? 'active' : ''}" type="button" data-image="${imagen}">
-            <img src="${imagen}" alt="${product.nombre} vista ${index + 1}" />
+            <img src="${imagen}" alt="${product.nombre} vista ${index + 1}" loading="lazy" />
           </button>
         `
       )

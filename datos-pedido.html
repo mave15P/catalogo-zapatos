@@ -9,7 +9,7 @@
   </head>
   <body class="product-page-body">
     <div class="page-shell order-page-shell">
-      <a href="catalogo.html" class="button primary">🢀 Volver a la simulación</a>
+      <a href="catalogo.html" class="button primary"><span class="back-arrow" aria-hidden="true">←</span> Volver a la simulación</a>
       <main class="order-form-page">
         <section class="order-form-intro">
           <p class="eyebrow-small">Consulta del pedido</p>
@@ -30,13 +30,13 @@
 
         <form id="datosPedidoForm" class="order-form">
           <div class="payment-currency-choice">
-            <label for="monedaPago">¿Con qué moneda pagarás todo el pedido?</label>
+            <label for="monedaPago">¿Con qué tasa pagarás todo el pedido?</label>
             <select id="monedaPago" name="monedaPago" required>
               <option value="" selected disabled>Selecciona BCV o USDT</option>
               <option value="bcv">BCV</option>
               <option value="usdt">USDT</option>
             </select>
-            <p>La moneda que elijas será la moneda de pago para todos los calzados de este pedido.</p>
+            <p>La tasa que elijas será la del pago para todos los calzados de este pedido.</p>
           </div>
 
           <label for="nombrePedido">Nombre</label>

@@ -76,7 +76,7 @@ function renderPedido() {
       const tallaActual = producto.tallas.includes(seleccion.talla) ? seleccion.talla : producto.tallas[0];
       return `
         <article class="order-item" data-id="${producto.id}">
-          <img src="${colorActual.imagen}" alt="${producto.nombre} - ${colorActual.nombre}" />
+          <img src="${colorActual.imagen}" alt="${producto.nombre} - ${colorActual.nombre}" loading="lazy" />
           <div class="order-item-info">
             <h3>${producto.nombre}</h3>
             <label>Color

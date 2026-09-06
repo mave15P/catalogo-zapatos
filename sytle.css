@@ -1655,6 +1655,13 @@ h1 {
   box-shadow: 0 12px 24px rgba(59, 31, 36, 0.18);
 }
 
+.back-arrow {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1.25em;
+  line-height: 0;
+}
+
 .button.secondary {
   display: inline-flex;
   align-items: center;
@@ -1675,6 +1682,16 @@ h1 {
 }
 
 @media (max-width: 640px) {
+  .guide-return-wrap {
+    position: static;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .guide-return-wrap .button.primary {
+    min-width: 150px;
+  }
+
   .guide-page {
     padding-left: 14px;
     padding-right: 14px;
