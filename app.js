@@ -196,7 +196,6 @@ function renderCatalogo(items = catalogoOrdenado) {
         )
         .join('');
 
-      const tallas = item.tallas.map((talla) => `<span class="talla-chip">${talla}</span>`).join('');
       const seleccionado = seleccion.has(item.id);
 
       return `
@@ -217,11 +216,6 @@ function renderCatalogo(items = catalogoOrdenado) {
             <div class="info-block">
               <p class="info-label">Colores disponibles</p>
               <div class="color-list">${colores}</div>
-            </div>
-
-            <div class="info-block">
-              <p class="info-label">Tallas</p>
-              <div class="talla-list">${tallas}</div>
             </div>
 
             <div class="card-actions">
