@@ -1,5 +1,132 @@
 const catalogo = [
   {
+    id: 'bota-alta',
+    nombre: 'Bota Alta',
+    nuevo: true,
+    precio: 60.0,
+    precioDescuento: 54.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Vino', hex: '#58111a', imagen: 'img/bota-alta-vino.jpg' },
+      { nombre: 'Negro', hex: '#040404', imagen: 'img/bota-alta-negra.jpg' },
+      { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/bota-alta-blanca.jpg' },
+      { nombre: 'Marrón', hex: '#8b5a2b', imagen: 'img/bota-alta-marron.jpg' },
+      { nombre: 'Negro Gamuza', hex: '#040404', imagen: 'img/bota-alta-negragamuza.jpg' }
+    ],
+    imagenes: [
+      'img/bota-alta-vino.jpg',
+      'img/bota-alta-negra.jpg',
+      'img/bota-alta-blanca.jpg',
+      'img/bota-alta-marron.jpg',
+      'img/bota-alta-negragamuza.jpg'
+    ],
+    detalle: 'Bota alta estilizada hasta la rodilla con tacón geométrico firme y cierre lateral completo. La prenda clave para elevar tus outfits con un look elegante y de alto impacto, con un tacón en bloque de 7 cm.'
+  },
+  {
+    id: 'botin-dama',
+    nombre: 'Botín Dama',
+    nuevo: true,
+    precio: 48.0,
+    precioDescuento: 43.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#040404', imagen: 'img/botin-dama-negro.jpg' },
+      { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/botin-dama-blanco.jpg' },
+      { nombre: 'Marrón', hex: '#8b5a2b', imagen: 'img/botin-dama-marron.jpg' },
+      { nombre: 'Negro Gamuza', hex: '#040404', imagen: 'img/botin-dama-negrogamuza.jpg' }
+    ],
+    imagenes: [
+      'img/botin-dama-negro.jpg',
+      'img/botin-dama-blanco.jpg',
+      'img/botin-dama-marron.jpg',
+      'img/botin-dama-negrogamuza.jpg'
+    ],
+    detalle: 'Botín tipo combate con cordones, hebilla decorativa al tobillo y suela track antideslizante. Ofrece un estilo urbano, resistente y súper cómodo para todo el día, con un tacón track de 5 a 6 cm.'
+  },
+  {
+    id: 'botin-pedreria',
+    nombre: 'Botín Pedrería',
+    nuevo: true,
+    precio: 55.0,
+    precioDescuento: 49.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/botin-pedreria-blanco.jpg' },
+      { nombre: 'Marrón', hex: '#8b5a2b', imagen: 'img/botin-pedreria-marron.jpg' },
+      { nombre: 'Negro Gamuza', hex: '#040404', imagen: 'img/botin-pedreria-negrogamuza.jpg' }
+    ],
+    imagenes: [
+      'img/botin-pedreria-blanco.jpg',
+      'img/botin-pedreria-marron.jpg',
+      'img/botin-pedreria-negrogamuza.jpg'
+    ],
+    detalle: 'Botín bajo al tobillo con detalle de tachuelas plateadas a los lados y cierre práctico. Perfecto si buscas comodidad diaria con un detalle moderno que resalte, con un tacón en bloque de 5 a 6 cm.'
+  },
+  {
+    id: 'bota-paris',
+    nombre: 'Bota Paris',
+    nuevo: true,
+    precio: 55.0,
+    precioDescuento: 50.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+    { nombre: 'Negro', hex: '#040404', imagen: 'img/botin-paris-negro.jpg' },
+    { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/botin-paris-blanco.jpg' },
+    { nombre: 'Negro Gamuza', hex: '#040404', imagen: 'img/botin-paris-negrogamuza.jpg' }
+    ],
+    imagenes: [
+      'img/botin-paris-blanco.jpg', 
+      'img/botin-paris-negrogamuza.jpg',
+      'img/botin-paris-negro.jpg'],
+    detalle: 'Botín con efecto arrugado en la caña y tacón bloque medio. Su diseño slouchy está en tendencia total para darle movimiento y versatilidad a tus outfits de temporada, con un tacón en bloque de 7 a 8 cm.'
+  },
+  {
+    id: 'botin-karen',
+    nombre: 'Botín Karen',
+    nuevo: true,
+    precio: 57.0,
+    precioDescuento: 51.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#040404', imagen: 'img/botin-karen-negro.jpg' },
+      { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/botin-karen-blanco.jpg' },
+      { nombre: 'Negro Gamuza', hex: '#040404', imagen: 'img/botin-karen-negrogamuza.jpg' }
+    ],
+    imagenes: [
+      'img/botin-karen-negro.jpg',
+      'img/botin-karen-blanco.jpg',
+      'img/botin-karen-negrogamuza.jpg'
+    ],
+    detalle: 'Botín clásico de caña corta con cierre lateral y tacón bloque. Aporta máxima firmeza al caminar y un toque estilizado a cualquier look, desde jeans hasta vestidos, con un tacón en bloque de 6.5 a 7.5 cm.'
+  },
+  {
+    id: 'modelo-rihana',
+    nombre: 'Modelo Rihana',
+    nuevo: true,
+    precio: 38.0,
+    precioDescuento: 33.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#040404', imagen: 'img/modelo-rihana-negra.jpg' },
+      { nombre: 'Blanco', hex: '#f5f3f0', imagen: 'img/modelo-rihana-blanca.jpg' },
+      { nombre: 'Marrón', hex: '#8b5a2b', imagen: 'img/modelo-rihana-marron.jpg' },
+      { nombre: 'Chocolate', hex: '#3d2314', imagen: 'img/modelo-rihana-chocolate.jpg' }
+    ],
+    imagenes: [
+      'img/modelo-rihana-negra.jpg',
+      'img/modelo-rihana-blanca.jpg',
+      'img/modelo-rihana-marron.jpg',
+      'img/modelo-rihana-chocolate.jpg'
+    ],
+    detalle: 'Sandalia de plataforma alta con tiras de ajuste rápido. Un diseño ultra cómodo y liviano, ideal para outfits relajados y casuales de todos los días, con una plataforma corrida de 5 a 6 cm.'
+  },
+  {
     id: 'tacon-ambar',
     nombre: 'Tacón Ambar',
     precio: 37.0,
@@ -27,6 +154,22 @@ const catalogo = [
     ],
     imagenes: ['img/baleta-mitchel-negro.jpg', 'img/aura-beich.jpg'],
     detalle: 'Un diseño clásico destalonado con elegante contraste bicolor en el borde y un detalle de lazo fino. Ideal para darle un toque chic y pulcro a cualquier outfit formal o casual.'
+  },
+  {
+    id: 'mocasin-charol',
+    nombre: 'Mocasin Charol',
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Crema', hex: '#d7b47f', imagen: 'img/mocasin-charol-crema.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/mocasin-charol-vino.jpg' },
+      { nombre: 'Negro', hex: '#0e0d0ddd', imagen: 'img/mocasin-charol-negro.jpg' },
+      { nombre: 'Blanco', hex: '#f6f6f7', imagen: 'img/mocasin-charol-blanco.jpg' }
+    ],
+    imagenes: ['img/mocasin-charol-crema.jpg', 'img/mocasin-charol-vino.jpg', 'img/mocasin-charol-negro.jpg', 'img/mocasin-charol-blanco.jpg'],
+    detalle: 'Mocasin estilo chunky en acabado charol brillante con adorno de lazo en el empeine y costuras marcadas. Cuenta con una suela dentada de goma que combina un toque moderno, juvenil y súper cómodo para el uso diario, suela gruesa track con una elevación de 4 a 5 cm en el talón y unos 2.5 a 3 cm en la parte delantera.'
   },
   {
     id: 'tacon-aura',

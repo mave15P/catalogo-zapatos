@@ -903,6 +903,21 @@ h1 {
   line-height: 1.2;
 }
 
+.new-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #b3633d;
+  color: #fffaf6;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 8px 18px rgba(31, 59, 77, 0.14);
+}
+
 .badge-mini {
   flex-shrink: 0;
   display: inline-flex;

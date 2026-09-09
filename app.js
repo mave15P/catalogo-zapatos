@@ -1,9 +1,13 @@
 const STORAGE_KEY = 'simulacionCalzados';
 const NEW_SELECTION_KEY = 'simulacionNuevaSeleccion';
 
-const catalogoOrdenado = [...window.catalogo].sort((a, b) =>
-  a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
-);
+const catalogoOrdenado = [...window.catalogo].sort((a, b) => {
+  if (a.nuevo !== b.nuevo) {
+    return a.nuevo ? -1 : 1;
+  }
+
+  return a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' });
+});
 
 const getSavedSelection = () => {
   try {
@@ -197,6 +201,7 @@ function renderCatalogo(items = catalogoOrdenado) {
         .join('');
 
       const seleccionado = seleccion.has(item.id);
+      const badgeNuevo = item.nuevo ? `<span class="new-badge">Nuevo</span>` : '';
 
       return `
         <article class="select-card ${item.id === modeloSeleccionadoId ? 'active' : ''}">
@@ -204,6 +209,7 @@ function renderCatalogo(items = catalogoOrdenado) {
           <div class="content">
             <div class="card-header-row">
               <h2 class="name">${item.nombre}</h2>
+              ${badgeNuevo}
             </div>
 
             <div class="meta">
