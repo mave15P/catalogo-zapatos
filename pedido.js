@@ -5,6 +5,8 @@ const pedidoMonedaSinSeleccionar = document.getElementById('pedidoMonedaSinSelec
 const pedidoTotalSeleccionado = document.getElementById('pedidoTotalSeleccionado');
 const pedidoTotal = document.getElementById('pedidoTotal');
 const pedidoReserva = document.getElementById('pedidoReserva');
+const pedidoCuota40a = document.getElementById('pedidoCuota40a');
+const pedidoCuota40b = document.getElementById('pedidoCuota40b');
 const datosPedidoForm = document.getElementById('datosPedidoForm');
 const datosPedidoResultado = document.getElementById('datosPedidoResultado');
 const monedaPago = document.getElementById('monedaPago');
@@ -45,12 +47,17 @@ function actualizarTotales(totalBcv, totalDivisa) {
   const mostrarUsdt = monedaPago.value === 'usdt';
   const total = mostrarBcv ? totalBcv : totalDivisa;
   const formato = mostrarBcv ? formatCurrency : formatUsdt;
+  const reserva = total * 0.2;
+  const cuota40a = total * 0.4;
+  const cuota40b = total * 0.4;
 
   pedidoMonedaSinSeleccionar.hidden = mostrarBcv || mostrarUsdt;
   pedidoTotalSeleccionado.hidden = !mostrarBcv && !mostrarUsdt;
   if (mostrarBcv || mostrarUsdt) {
     pedidoTotal.textContent = formato(total);
-    pedidoReserva.textContent = formato(total * 0.2);
+    pedidoReserva.textContent = formato(reserva);
+    pedidoCuota40a.textContent = formato(cuota40a);
+    pedidoCuota40b.textContent = formato(cuota40b);
   }
 }
 
@@ -149,9 +156,12 @@ datosPedidoForm.addEventListener('submit', (event) => {
   const totalDivisa = pedido.reduce((total, item) => total + (item.producto.precioDescuento ?? item.producto.precio), 0);
   const reservaBcv = totalBcv * 0.2;
   const reservaUsdt = totalDivisa * 0.2;
+  const cuota40Bcv = totalBcv * 0.4;
+  const cuota40Usdt = totalDivisa * 0.4;
   const mostrarBcv = monedaPago.value === 'bcv';
   const totalSeleccionado = mostrarBcv ? totalBcv : totalDivisa;
   const reservaSeleccionada = mostrarBcv ? reservaBcv : reservaUsdt;
+  const cuota40Seleccionada = mostrarBcv ? cuota40Bcv : cuota40Usdt;
   const formatoSeleccionado = mostrarBcv ? formatCurrency : formatUsdt;
   const monedaSeleccionada = mostrarBcv ? 'BCV' : 'USDT';
   const detalles = pedido
@@ -173,7 +183,9 @@ datosPedidoForm.addEventListener('submit', (event) => {
     '',
     `Moneda de pago para todo el pedido: ${monedaSeleccionada}`,
     `Total a pagar: ${formatoSeleccionado(totalSeleccionado)}`,
-    `20% de reserva: ${formatoSeleccionado(reservaSeleccionada)}`
+    `20% de reserva: ${formatoSeleccionado(reservaSeleccionada)}`,
+    `40% cuota 1: ${formatoSeleccionado(cuota40Seleccionada)}`,
+    `40% cuota 2: ${formatoSeleccionado(cuota40Seleccionada)}`
   ].join('\n');
 
   const whatsappUrl = `https://wa.me/584128672906?text=${encodeURIComponent(mensaje)}`;

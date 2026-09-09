@@ -1,5 +1,6 @@
 const STORAGE_KEY = 'simulacionCalzados';
 const NEW_SELECTION_KEY = 'simulacionNuevaSeleccion';
+const SEARCH_INPUT_KEY = 'catalogoBusqueda';
 
 const catalogoOrdenado = [...window.catalogo].sort((a, b) => {
   if (a.nuevo !== b.nuevo) {
@@ -39,6 +40,10 @@ const normalizeSearchText = (value) =>
 const contenedor = document.getElementById('catalogo');
 const total = document.getElementById('totalProductos');
 const searchInput = document.getElementById('searchInput');
+const searchValorGuardado = localStorage.getItem(SEARCH_INPUT_KEY) || '';
+if (searchInput) {
+  searchInput.value = searchValorGuardado;
+}
 const simulacionLista = document.getElementById('simulacionLista');
 const simulacionVacia = document.getElementById('simulacionVacia');
 const precioBvc = document.getElementById('precioBvc');
